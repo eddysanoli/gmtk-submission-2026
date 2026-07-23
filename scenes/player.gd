@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@onready var spawn_location = $Position3D
+@onready var bread = preload("res://scenes/bread.tscn")
+
 const SPEED = 5.0
 
 var can_shoot = true
@@ -38,4 +41,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func shoot():
-	pass
+	var new_bread = bread.instance()
+	get_node("../Enviorment").add_child(new_bread)
+	new_bread.global_transform = spawn_location.global_transform
+#	Play Shoot animation
+#	Shoot bread
+#	Make can_shoot false
+#	Timer
+#	Return can_shoot true
