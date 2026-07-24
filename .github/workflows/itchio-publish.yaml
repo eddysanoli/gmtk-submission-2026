@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'  # Trigger on version tags like v1.0.0
 jobs:
   deploy:
-    if: github.event.base_ref == 'refs/heads/main'
+    if: ${{ github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
