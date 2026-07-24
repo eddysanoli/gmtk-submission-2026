@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dswx1t1au7yw8"]
 
-[ext_resource type="PackedScene" uid="uid://b63n4iaxj37xe" path="res://scenes/player.tscn" id="1_8rem4"]
+[ext_resource type="PackedScene" uid="uid://b63n4iaxj37xe" path="res://scenes/characters/player.tscn" id="1_beodt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rchu1"]
 
@@ -25,4 +25,4 @@ environment = SubResource("Environment_rchu1")
 transform = Transform3D(1, 0, 0, 0, 0.23981142, 0.9708195, 0, -0.9708195, 0.23981142, 0, 10.439464, 2.879274)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=2038812497 instance=ExtResource("1_8rem4")]
+[node name="Player" parent="." unique_id=2038812497 instance=ExtResource("1_beodt")]
