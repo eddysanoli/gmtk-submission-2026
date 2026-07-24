@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+
 @export var move_speed = 2.0
 @export var attack_range = 2.0
 
