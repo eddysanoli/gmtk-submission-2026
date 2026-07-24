@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://c6gfg2ooue5n4"]
 
+[ext_resource type="Script" uid="uid://dro5tqkqtwgb5" path="res://scenes/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://ldplhphym4iq" path="res://graphics/npc_1.png" id="2_4ra3w"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
+height = 1.206543
 
 [node name="Enemy" type="CharacterBody3D" unique_id=69196345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6145858, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_md0e3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1364973462 groups=["Enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.017845213, 0)
 shape = SubResource("CapsuleShape3D_rchu1")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=149312535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016723573, 0)
+pixel_size = 0.001
+billboard = 2
+texture = ExtResource("2_4ra3w")
