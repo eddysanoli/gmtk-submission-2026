@@ -15,7 +15,7 @@ var dead = false
 
 # ─────────────────────────────────────────────
 func _ready():
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
 	if dead:
@@ -27,7 +27,7 @@ func _input(event):
 func _process(_delta):
 	if dead:
 		return
-	if Input.is_action_just_pressed("shoot"):
+	if (Input.is_action_just_pressed("shoot")) and (Engine.time_scale != 0):
 		if !can_shoot:
 			return
 		charging = true
@@ -74,9 +74,15 @@ func _on_cooldown_timeout():
 
 # ─────────────────────────────────────────────
 func pause():
-	get_tree().paused = true
+	Engine.time_scale = 0
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/PauseScreen.show()
 
 func _on_return_button_up():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
-	get_tree().paused = false
+	Engine.time_scale = 1
+
+func kill():
+	dead = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
