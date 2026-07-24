@@ -1,15 +1,19 @@
 extends CharacterBody3D
 
+# ─────────────────────────────────────────────
 @onready var spawn_location = $Position3D
 @onready var cooldown_timer = $Cooldown
 @onready var bread = preload("res://scenes/bread.tscn")
-
+# ─────────────────────────────────────────────
 const SPEED = 5.0
 
 var charging = false
+var charge_start_time : float
+var charge_tier = 0
 var can_shoot = true
 var dead = false
 
+# ─────────────────────────────────────────────
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -18,7 +22,8 @@ func _input(event):
 		return
 	if (event is InputEventMouseMotion) and (Engine.time_scale != 0):
 		rotation_degrees.y -= event.relative.x * 0.5
-	
+
+# ─────────────────────────────────────────────
 func _process(_delta):
 	if dead:
 		return
@@ -39,11 +44,12 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
-	
-func shoot():
-	if !can_shoot:
-		return
+
+# ─────────────────────────────────────────────
+func shoot(charge_start: float, charge_end: float):
+	calculate_power(charge_end-charge_start)
 	var new_bread = bread.instantiate()
+	new_bread.power_tier = charge_tier
 	get_node("../Enviorment").add_child(new_bread)
 	new_bread.global_transform = spawn_location.global_transform
 	can_shoot = false
@@ -56,6 +62,12 @@ func pause():
 
 func _on_cooldown_timeout():
 	can_shoot = true
+
+# ─────────────────────────────────────────────
+func pause():
+	Engine.time_scale = 0
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer/PauseScreen.show()
 
 func _on_return_button_up():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
