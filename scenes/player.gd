@@ -16,13 +16,13 @@ func _ready():
 func _input(event):
 	if dead:
 		return
-	if event is InputEventMouseMotion:
+	if (event is InputEventMouseMotion) and (Engine.time_scale != 0):
 		rotation_degrees.y -= event.relative.x * 0.5
 	
 func _process(_delta):
 	if dead:
 		return
-	if Input.is_action_just_pressed("shoot"):
+	if (Input.is_action_just_pressed("shoot")) and (Engine.time_scale != 0):
 		shoot()
 	if Input.is_action_just_pressed("Pause"):
 		pause()
@@ -50,7 +50,7 @@ func shoot():
 	cooldown_timer.start()
 
 func pause():
-	get_tree().paused = true
+	Engine.time_scale = 0
 	$CanvasLayer/PauseScreen.show()
 
 func _on_cooldown_timeout():
@@ -58,4 +58,4 @@ func _on_cooldown_timeout():
 
 func _on_return_button_up():
 	$CanvasLayer/PauseScreen.hide()
-	get_tree().paused = false
+	Engine.time_scale = 1
