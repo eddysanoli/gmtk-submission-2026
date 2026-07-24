@@ -121,7 +121,7 @@ grow_horizontal = 2
 text = "PAUSED"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/PauseScreen/Panel" unique_id=1209084172]
+[node name="Return" type="Button" parent="CanvasLayer/PauseScreen/Panel" unique_id=1209084172]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,7 +136,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Return"
 
-[node name="Button2" type="Button" parent="CanvasLayer/PauseScreen/Panel" unique_id=1920909527]
+[node name="Quit" type="Button" parent="CanvasLayer/PauseScreen/Panel" unique_id=1920909527]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,3 +153,10 @@ text = "Quit"
 
 [node name="Position3D" type="Marker3D" parent="." unique_id=1871235181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1991595156]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Return" to="." method="_on_return_button_up"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

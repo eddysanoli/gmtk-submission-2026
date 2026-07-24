@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bdwlwbrotytv0"]
 
 [ext_resource type="Script" uid="uid://c2bkkbmr80l1d" path="res://scenes/bread.gd" id="1_svkq2"]
+[ext_resource type="Texture2D" uid="uid://dt205favfek2s" path="res://assets/icon.svg" id="2_16yqp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rchu1"]
 radius = 0.03503583
@@ -10,5 +11,8 @@ script = ExtResource("1_svkq2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=104190044]
 shape = SubResource("SphereShape3D_rchu1")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1097135109]
+texture = ExtResource("2_16yqp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
