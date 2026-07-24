@@ -1,5 +1,7 @@
 extends Area3D
 
+#@onready var chef : CharacterBody3D = get_tree().get_first_node_in_group("Enemy")
+
 var bread_speed = 10
 var bread_damage = 10
 
@@ -13,5 +15,7 @@ func _process(delta):
 	
 
 func _on_body_entered(_body):
-	deal_damage()
+	#deal_damage()
+	print("hit")
 	queue_free()
+	

@@ -28,7 +28,7 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2038812497 instance=ExtResource("1_8rem4")]
 
-[node name="Enemy" parent="." unique_id=69196345 instance=ExtResource("2_gi7kc")]
+[node name="Enemy1" parent="." unique_id=69196345 instance=ExtResource("2_gi7kc")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.6123095, 0.94695246, -4.1529655)
 
 [node name="Enemy2" parent="." unique_id=1887519134 instance=ExtResource("2_gi7kc")]

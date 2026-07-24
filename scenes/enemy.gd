@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var attack_range = 2.0
 
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("Player")
+
 var dead = false
 
 func _physics_process(delta):
@@ -16,7 +17,6 @@ func _physics_process(delta):
 	var dir = player.global_position - global_position
 	dir.y = 0.0
 	dir = dir.normalized()
-	
 	velocity = dir * move_speed
 	move_and_slide()
 	attempt_to_kill_player()
@@ -35,6 +35,8 @@ func attempt_to_kill_player():
 func kill():
 	dead = true
 	$CollisionShape3D.disabled = true
+	hide()
+
 	
 	
 	
