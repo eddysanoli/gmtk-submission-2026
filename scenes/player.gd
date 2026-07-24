@@ -11,7 +11,7 @@ var can_shoot = true
 var dead = false
 
 func _ready():
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
 	if dead:
@@ -51,11 +51,13 @@ func shoot():
 
 func pause():
 	Engine.time_scale = 0
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/PauseScreen.show()
 
 func _on_cooldown_timeout():
 	can_shoot = true
 
 func _on_return_button_up():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
 	Engine.time_scale = 1
