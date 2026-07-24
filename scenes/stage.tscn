@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dswx1t1au7yw8"]
+
+[ext_resource type="PackedScene" uid="uid://b63n4iaxj37xe" path="res://scenes/player.tscn" id="1_8rem4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rchu1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34fwg"]
+albedo_color = Color(0.89411765, 0.38039216, 0, 1)
+
+[sub_resource type="Environment" id="Environment_rchu1"]
+
+[node name="Stage" type="Node3D" unique_id=1925008938]
+
+[node name="Enviorment" type="Node3D" parent="." unique_id=1909674417]
+
+[node name="Temp Ground" type="MeshInstance3D" parent="Enviorment" unique_id=395948314]
+transform = Transform3D(7.666635, 0, 0, 0, 1, 0, 0, 0, 8.458963, 0, 0, 0)
+mesh = SubResource("PlaneMesh_rchu1")
+surface_material_override/0 = SubResource("StandardMaterial3D_34fwg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=423501558]
+environment = SubResource("Environment_rchu1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1367093839]
+transform = Transform3D(1, 0, 0, 0, 0.23981142, 0.9708195, 0, -0.9708195, 0.23981142, 0, 10.439464, 2.879274)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=2038812497 instance=ExtResource("1_8rem4")]
