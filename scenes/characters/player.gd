@@ -56,7 +56,7 @@ func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
 	var new_bread = bread.instantiate()
 	new_bread.power_tier = charge_tier
-	get_node("../Enviorment").add_child(new_bread)
+	get_node("../Objects").add_child(new_bread)
 	new_bread.global_transform = spawn_location.global_transform
 	can_shoot = false
 	cooldown_timer.start()

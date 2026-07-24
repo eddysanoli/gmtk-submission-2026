@@ -22,6 +22,7 @@ func _process(delta):
 	translate(Vector3.FORWARD * bread_speed * delta)
 	
 
-func _on_body_entered(_body):
-	deal_damage()
+func _on_body_entered(body):
+	if body.is_in_group("Enemies") and body.has_method("take_damage"):
+		body.take_damage(bread_damage)
 	queue_free()

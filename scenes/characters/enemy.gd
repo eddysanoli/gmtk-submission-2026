@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
-@export var move_speed = 2.0
+@export var move_speed = 1.0
 @export var attack_range = 2.0
+@export var health = 30.0
 
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("Player")
-
 var dead = false
 
 # ─────────────────────────────────────────────
@@ -34,19 +34,14 @@ func attempt_to_kill_player():
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
 	if result.is_empty():
 		player.kill()
-		
+
+# ─────────────────────────────────────────────
+func take_damage(damage):
+	health -= damage
+	if health <= 0:
+		kill()
+
 func kill():
 	dead = true
 	$CollisionShape3D.disabled = true
 	hide()
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

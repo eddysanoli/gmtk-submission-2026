@@ -56,8 +56,9 @@ shoot={
 [layer_names]
 
 3d_physics/layer_1="enviorment"
-3d_physics/layer_2="characters"
+3d_physics/layer_2="player"
 3d_physics/layer_3="bread"
+3d_physics/layer_4="enemies"
 
 [physics]
 
