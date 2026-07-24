@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://b63n4iaxj37xe"]
+
+[ext_resource type="Script" uid="uid://bxwixu5dlfqso" path="res://scenes/characters/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
+
+[node name="Player" type="CharacterBody3D" unique_id=2038812497 groups=["Player"]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1773903997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_rchu1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=834289658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1339417707]
+
+[node name="GunBase" type="Control" parent="CanvasLayer" unique_id=1615208974]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1755915098]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DeathScreen" unique_id=105571246]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -171.0
+offset_right = 158.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/Panel" unique_id=648073828]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -79.0
+offset_right = 156.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Failed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/Panel" unique_id=977369543]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 6.0
+offset_right = 33.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[node name="PauseScreen" type="Control" parent="CanvasLayer" unique_id=456555551]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PauseScreen" unique_id=1367615421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -170.0
+offset_right = 157.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseScreen/Panel" unique_id=1624440735]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 29.0
+offset_right = 105.0
+offset_bottom = 56.0
+grow_horizontal = 2
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="CanvasLayer/PauseScreen/Panel" unique_id=1209084172]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -36.5
+offset_right = 46.0
+offset_bottom = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return"
+
+[node name="Quit" type="Button" parent="CanvasLayer/PauseScreen/Panel" unique_id=1920909527]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 16.5
+offset_right = 47.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[node name="Position3D" type="Marker3D" parent="." unique_id=1871235181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1991595156]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Return" to="." method="_on_return_button_up"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

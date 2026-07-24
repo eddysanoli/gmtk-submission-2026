@@ -20,7 +20,7 @@ func _ready():
 func _input(event):
 	if dead:
 		return
-	if event is InputEventMouseMotion:
+	if (event is InputEventMouseMotion) and (Engine.time_scale != 0):
 		rotation_degrees.y -= event.relative.x * 0.5
 
 # ─────────────────────────────────────────────
