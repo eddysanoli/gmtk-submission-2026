@@ -1,29 +1,40 @@
 extends CharacterBody3D
 
+# ─────────────────────────────────────────────
 @onready var spawn_location = $Position3D
 @onready var cooldown_timer = $Cooldown
 @onready var bread = preload("res://scenes/bread.tscn")
-
+# ─────────────────────────────────────────────
 const SPEED = 5.0
 
 var charging = false
+var charge_start_time : float
+var charge_tier = 0
 var can_shoot = true
 var dead = false
 
+# ─────────────────────────────────────────────
 func _ready():
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
 	if dead:
 		return
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * 0.5
-	
+
+# ─────────────────────────────────────────────
 func _process(_delta):
 	if dead:
 		return
-	if Input.is_action_just_pressed("shoot"):
-		shoot()
+	if (Input.is_action_just_pressed("shoot")) and (Engine.time_scale != 0):
+		if !can_shoot:
+			return
+		charging = true
+		charge_start_time = Time.get_ticks_msec()
+	if Input.is_action_just_released("shoot") and charging == true:
+		charging = false
+		shoot(charge_start_time, Time.get_ticks_msec())
 	if Input.is_action_just_pressed("Pause"):
 		pause()
 	
@@ -39,23 +50,39 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
-	
-func shoot():
-	if !can_shoot:
-		return
+
+# ─────────────────────────────────────────────
+func shoot(charge_start: float, charge_end: float):
+	calculate_power(charge_end-charge_start)
 	var new_bread = bread.instantiate()
+	new_bread.power_tier = charge_tier
 	get_node("../Enviorment").add_child(new_bread)
 	new_bread.global_transform = spawn_location.global_transform
 	can_shoot = false
 	cooldown_timer.start()
-
-func pause():
-	get_tree().paused = true
-	$CanvasLayer/PauseScreen.show()
+	
+func calculate_power(charging_time):
+	if charging_time < 500:
+		charge_tier = 1
+	if charging_time > 500 and charging_time < 1500:
+		charge_tier = 2
+	if charging_time > 1500:
+		charge_tier = 3
 
 func _on_cooldown_timeout():
 	can_shoot = true
 
+# ─────────────────────────────────────────────
+func pause():
+	Engine.time_scale = 0
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer/PauseScreen.show()
+
 func _on_return_button_up():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
-	get_tree().paused = false
+	Engine.time_scale = 1
+
+func kill():
+	dead = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

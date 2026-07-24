@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://c6gfg2ooue5n4"]
 
+[ext_resource type="Script" uid="uid://dro5tqkqtwgb5" path="res://scenes/enemy.gd" id="1_7p1mj"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=69196345]
+script = ExtResource("1_7p1mj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1364973462 groups=["Enemies"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
