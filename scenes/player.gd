@@ -61,3 +61,7 @@ func _on_return_button_up():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
 	Engine.time_scale = 1
+	
+func kill():
+	dead = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

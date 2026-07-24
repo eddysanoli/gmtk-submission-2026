@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var move_speed = 2.0
 @export var attack_range = 2.0
 
-@onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
+@onready var player : CharacterBody3D = get_tree().get_first_node_in_group("Player")
 var dead = false
 
 func _physics_process(delta):
