@@ -1,0 +1,46 @@
+name: Publish to Itch.io
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags like v1.0.0
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Verify tag commit is on main
+        id: on_main
+        run: |
+          git fetch origin main --depth=1
+          if git merge-base --is-ancestor "$GITHUB_SHA" "origin/main"; then
+            echo "on_main=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "on_main=false" >> "$GITHUB_OUTPUT"
+            echo "Tag commit is not on main; skipping publish steps."
+          fi
+
+      - name: Godot Export
+        id: export
+        if: steps.on_main.outputs.on_main == 'true'
+        uses: firebelley/godot-export@v8.0.0
+        with:
+          godot_executable_download_url: https://github.com/godotengine/godot/releases/download/4.7.1-stable/Godot_v4.7.1-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://github.com/godotengine/godot/releases/download/4.7.1-stable/Godot_v4.7.1-stable_export_templates.tpz
+          relative_project_path: ./
+          archive_output: true
+        #env:
+          #GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+      - name: Publish to Itch
+        if: steps.on_main.outputs.on_main == 'true'
+        uses: Ayowel/butler-to-itch@v1.3.1
+        with:
+          butler_key: ${{secrets.ITCHIO_TOKEN}}
+          itch_user: eddysanoli
+          itch_game: locked-and-toasted
+          version: ${{ github.ref_name }}
+          files: "${{ steps.export.outputs.archive_directory }}/test-web.zip"
