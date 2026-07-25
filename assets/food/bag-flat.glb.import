@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3hq3ssphesya"
-path="res://.godot/imported/computerScreen.fbx-c2783a38f6279072ab6d4751c9b95ad2.scn"
+uid="uid://dvk573gdw2dju"
+path="res://.godot/imported/bag-flat.glb-df6d2f581f98d1929e2f0b89d5d740ac.scn"
 
 [deps]
 
-source_file="res://assets/furniture/computerScreen.fbx"
-dest_files=["res://.godot/imported/computerScreen.fbx-c2783a38f6279072ab6d4751c9b95ad2.scn"]
+source_file="res://assets/food/bag-flat.glb"
+dest_files=["res://.godot/imported/bag-flat.glb-df6d2f581f98d1929e2f0b89d5d740ac.scn"]
 
 [params]
 
@@ -32,25 +32,14 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:computerScreen": {
-"generate/physics": true,
-"physics/mask": 14,
-"physics/shape_type": 3,
-"primitive/position": Vector3(-2, 1.5, 0.5),
-"primitive/size": Vector3(4, 3, 1)
-}
-}
-}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+_subresources={}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1
