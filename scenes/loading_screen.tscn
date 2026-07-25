@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d0h5ytg6dmmyr"]
+
+[ext_resource type="Script" uid="uid://y7q3xipqj4wa" path="res://scenes/loading_screen.gd" id="1_ep5rh"]
+
+[node name="Control" type="Control" unique_id=787398687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ep5rh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=454442192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.33333334)
+
+[node name="ProgressLabel" type="Label" parent="." unique_id=871441530]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "0%"
+
+[node name="Label" type="Label" parent="." unique_id=1216291791]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -27.5
+offset_right = 91.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "LOADING"
