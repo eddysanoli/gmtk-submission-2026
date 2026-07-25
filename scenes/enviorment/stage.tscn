@@ -13,4 +13,4 @@
 [node name="Objects" type="Node3D" parent="." unique_id=1704329032]
 
 [node name="Enemy" parent="." unique_id=69196345 instance=ExtResource("3_xm532")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.414861, 0.050001144, -0.8690586)
+transform = Transform3D(-0.9986007, 0, 0.052883413, 0, 1, 0, -0.052883413, 0, -0.9986007, -8.414861, 0.050001144, -0.8690586)

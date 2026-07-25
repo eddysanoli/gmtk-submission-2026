@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var spawn_location = $Position3D
 @onready var cooldown_timer = $Cooldown
 @onready var bread = preload("res://scenes/bread.tscn")
+
 # ─────────────────────────────────────────────
 const SPEED = 5.0
 
@@ -51,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
 
-# ─────────────────────────────────────────────
+# ─────────────────────SHOOTING────────────────────────
 func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
 	var new_bread = bread.instantiate()
@@ -72,7 +73,7 @@ func calculate_power(charging_time):
 func _on_cooldown_timeout():
 	can_shoot = true
 
-# ─────────────────────────────────────────────
+# ────────────────────PAUSE─────────────────────────
 func pause():
 	Engine.time_scale = 0
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -82,7 +83,18 @@ func _on_return_button_up():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
 	Engine.time_scale = 1
+	
+func _on_quit_button_up():
+	pass # Replace with function body.
 
+# ────────────────────DEATH─────────────────────────
 func kill():
 	dead = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer/DeathScreen.show()
+
+func _on_restart_button_up():
+	pass # Replace with function body.
+
+func _on_quit_game_button_up() -> void:
+	pass # Replace with function body.

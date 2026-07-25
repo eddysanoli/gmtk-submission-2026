@@ -4,8 +4,8 @@ extends Area3D
 var power_tier = 1
 var bread_speed = 10
 var bread_damage = 10
-# ─────────────────────────────────────────────
 
+# ─────────────────────────────────────────────
 func _ready():
 	bread_damage = 10*power_tier
 	print("power_tier =", power_tier)
