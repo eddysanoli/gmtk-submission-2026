@@ -17,6 +17,8 @@ var dead = false
 # ─────────────────────────────────────────────
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$CanvasLayer/PauseScreen/Panel/Quit.pressed.connect(_on_quit_button_up)
+	$CanvasLayer/PauseScreen/Panel/Return.pressed.connect(_on_return_button_up)
 	
 func _input(event):
 	if dead:
@@ -80,13 +82,12 @@ func pause():
 	$CanvasLayer/PauseScreen.show()
 
 func _on_return_button_up():
-	print("test")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
 	Engine.time_scale = 1
 
 func _on_quit_button_up():
-	print("test")
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func kill():
