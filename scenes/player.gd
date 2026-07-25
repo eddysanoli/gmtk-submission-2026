@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var spawn_location = $Position3D
 @onready var cooldown_timer = $Cooldown
 @onready var bread = preload("res://scenes/bread.tscn")
+
 # ─────────────────────────────────────────────
 const SPEED = 5.0
 
@@ -79,10 +80,16 @@ func pause():
 	$CanvasLayer/PauseScreen.show()
 
 func _on_return_button_up():
+	print("test")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
 	Engine.time_scale = 1
 
+func _on_quit_button_up():
+	print("test")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
 func kill():
 	dead = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	

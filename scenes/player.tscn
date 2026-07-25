@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b63n4iaxj37xe"]
+[gd_scene format=3 uid="uid://kcqd6ds2ndca"]
 
 [ext_resource type="Script" uid="uid://bxwixu5dlfqso" path="res://scenes/player.gd" id="1_3vyb7"]
 
@@ -86,7 +86,6 @@ grow_vertical = 2
 text = "Restart"
 
 [node name="PauseScreen" type="Control" parent="CanvasLayer" unique_id=456555551]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,7 +115,7 @@ anchor_right = 0.5
 offset_left = -105.0
 offset_top = 29.0
 offset_right = 105.0
-offset_bottom = 100.0
+offset_bottom = 59.0
 grow_horizontal = 2
 text = "PAUSED"
 horizontal_alignment = 1
@@ -159,4 +158,5 @@ wait_time = 3.0
 one_shot = true
 
 [connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Return" to="." method="_on_return_button_up"]
+[connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Quit" to="." method="_on_quit_button_up"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
