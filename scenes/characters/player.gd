@@ -108,12 +108,14 @@ func kill():
 	$CanvasLayer/DeathScreen.show()
 
 func _on_restart_button_up():
+	#get_tree().change_scene_to_file("res://scenes/enviorment/stage.tscn")
 	$CanvasLayer.hide()
-	Engine.time_scale = 1
+	#Engine.time_scale = 1
 	game_manager.load_scene_with_loading_screen("res://scenes/enviorment/stage.tscn")
 
 func _on_quit_game_button_up() -> void:
+	#get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	$CanvasLayer.hide()
-	Engine.time_scale = 1
+	#Engine.time_scale = 1
 	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
 	
