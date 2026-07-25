@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var move_speed = 1.0
-@export var attack_range = 2.0
+@export var move_speed = 1.5
+@export var attack_range = 1.3
 @export var health = 30.0
 @export var memory_time = 5.0
 
