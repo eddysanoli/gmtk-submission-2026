@@ -10,13 +10,7 @@ var progress = [0.0]
 var loaded_scene:PackedScene
 @onready var progress_label:Label = $ProgressLabel
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta):
 	if next_scene_path == "":
 		return
 	
