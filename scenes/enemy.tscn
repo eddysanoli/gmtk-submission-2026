@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6gfg2ooue5n4"]
 
 [ext_resource type="Script" uid="uid://dro5tqkqtwgb5" path="res://scenes/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://3s6m5v8qu2lt" path="res://graphics/test-sprite-1.png" id="2_md0e3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -10,3 +11,9 @@ script = ExtResource("1_7p1mj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1364973462 groups=["Enemies"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_rchu1")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=118374305]
+transform = Transform3D(0.1048848, 0, 0, 0, 0.17615908, 0, 0, 0, 0.08814395, 0, 0.9622578, 0)
+billboard = 2
+texture = ExtResource("2_md0e3")

@@ -22,7 +22,9 @@ func _ready():
 	
 func _input(event):
 	if dead:
-		return
+		get_tree().change_scene_to_file("res://scenes/dead_menu.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	if (event is InputEventMouseMotion) and (Engine.time_scale != 0):
 		rotation_degrees.y -= event.relative.x * 0.5
 
@@ -92,5 +94,4 @@ func _on_quit_button_up():
 
 func kill():
 	dead = true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	

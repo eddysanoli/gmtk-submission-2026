@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dswx1t1au7yw8"]
 
-[ext_resource type="PackedScene" uid="uid://b63n4iaxj37xe" path="res://scenes/player.tscn" id="1_8rem4"]
+[ext_resource type="PackedScene" uid="uid://b63n4iaxj37xe" path="res://scenes/characters/player.tscn" id="1_8rem4"]
+[ext_resource type="PackedScene" uid="uid://c6gfg2ooue5n4" path="res://scenes/enemy.tscn" id="2_gi7kc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rchu1"]
 
@@ -26,3 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 0.23981142, 0.9708195, 0, -0.9708195, 0.2398
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2038812497 instance=ExtResource("1_8rem4")]
+
+[node name="Enemy" parent="." unique_id=69196345 instance=ExtResource("2_gi7kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1970215, 0, -7.750366)
