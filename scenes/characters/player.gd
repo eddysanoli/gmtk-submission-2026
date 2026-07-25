@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var cooldown_timer = $Cooldown
 @onready var charge_timer = $Charge
 @onready var bread = preload("res://scenes/bread.tscn")
+@onready var animated_sprite_2d: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
@@ -18,6 +19,7 @@ var dead = false
 
 # ─────────────────────────────────────────────
 func _ready():
+	animated_sprite_2d.play("idle")
 	Engine.time_scale = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	

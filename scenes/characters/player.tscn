@@ -1,8 +1,56 @@
 [gd_scene format=3 uid="uid://kcqd6ds2ndca"]
 
 [ext_resource type="Script" uid="uid://bxwixu5dlfqso" path="res://scenes/characters/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://k42d40jsnw8f" path="res://graphics/hands/start/start_1.png" id="2_2l4js"]
+[ext_resource type="Texture2D" uid="uid://diedy3fqkd6ab" path="res://graphics/hands/start/start_2.png" id="3_jk2m4"]
+[ext_resource type="Texture2D" uid="uid://2rfyy0plixot" path="res://graphics/hands/start/start_3.png" id="4_xhtjm"]
+[ext_resource type="Texture2D" uid="uid://cv3bf77eshbwn" path="res://graphics/hands/start/start_4.png" id="5_k4v7y"]
+[ext_resource type="Texture2D" uid="uid://cocrq7bcxaokq" path="res://graphics/hands/start/start_5.png" id="6_xrqxk"]
+[ext_resource type="Texture2D" uid="uid://db521gx4xt2nj" path="res://graphics/hands/start/start_6.png" id="7_g66nw"]
+[ext_resource type="Texture2D" uid="uid://d2cv5n7ko1fha" path="res://graphics/hands/start/start_7.png" id="8_rpnd8"]
+[ext_resource type="Texture2D" uid="uid://buobidd5tmc5k" path="res://graphics/hands/start/start_8.png" id="9_d6tgn"]
+[ext_resource type="Texture2D" uid="uid://cjenx03vup8r3" path="res://graphics/hands/start/start_9.png" id="10_3wg1y"]
+[ext_resource type="Texture2D" uid="uid://bn8cgdj0bxd36" path="res://graphics/hands/start/start_10.png" id="11_kmyvj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34fwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2l4js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jk2m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xhtjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k4v7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xrqxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g66nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rpnd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d6tgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3wg1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kmyvj")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody3D" unique_id=2038812497 groups=["Player"]]
 collision_layer = 2
@@ -30,6 +78,14 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=967550415]
+position = Vector2(-247.00002, -234)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_34fwg")
+animation = &"idle"
+frame = 9
+frame_progress = 1.0
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1755915098]
 visible = false
@@ -168,7 +224,7 @@ grow_vertical = 2
 text = "Quit"
 
 [node name="Position3D" type="Marker3D" parent="." unique_id=1871235181]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3283832, 1.4611235, -0.5)
 
 [node name="Cooldown" type="Timer" parent="." unique_id=1991595156]
 one_shot = true

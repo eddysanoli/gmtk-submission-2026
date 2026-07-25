@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
-@export var move_speed = 1.5
+@onready var animated_sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
+
+@export var move_speed = 1.8
 @export var attack_range = 1.3
 @export var health = 30.0
 @export var memory_time = 5.0
@@ -12,7 +14,8 @@ var dead = false
 enum State {
 	IDLE,
 	CHASE,
-	ATTACK
+	ATTACK,
+	HURT
 }
 
 var state = State.IDLE
@@ -31,9 +34,12 @@ func _physics_process(delta):
 				state = State.CHASE
 				last_seen_position = player.global_position
 		State.CHASE:
+			animated_sprite_3d.play("walking")
 			chase_player(delta)
 		State.ATTACK:
 			attempt_to_kill_player()
+		State.HURT:
+			velocity = Vector3.ZERO
 	
 # ───────────────Player Interaction──────────────────────
 func can_see_player() -> bool:
@@ -83,6 +89,12 @@ func take_damage(damage):
 	health -= damage
 	if health <= 0:
 		kill()
+	state = State.HURT
+	animated_sprite_3d.play("take_damage")
+
+func _on_animated_sprite_3d_animation_finished():
+	if animated_sprite_3d.animation == "take_damage":
+		state = State.CHASE
 
 func kill():
 	dead = true
