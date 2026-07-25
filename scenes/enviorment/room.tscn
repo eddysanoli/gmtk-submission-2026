@@ -1,6 +1,29 @@
 [gd_scene format=3 uid="uid://d0fyx3qej33c"]
 
+[ext_resource type="PackedScene" uid="uid://4qlaj6qkg8dl" path="res://assets/furniture/cardboardBoxClosed.fbx" id="1_jwkx8"]
+
 [sub_resource type="Environment" id="Environment_rchu1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v87gb"]
+albedo_color = Color(0.9411765, 0.9019608, 0.54901963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtt4x"]
+albedo_color = Color(0.9411765, 0.9019608, 0.54901963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0k1o"]
+albedo_color = Color(0.9411765, 0.9019608, 0.54901963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvviw"]
+albedo_color = Color(0.9411765, 0.9019608, 0.54901963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dh7p6"]
+albedo_color = Color(0.9411765, 0.9019608, 0.54901963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvngo"]
+albedo_color = Color(0.9411765, 0.9019608, 0.54901963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqrm3"]
+albedo_color = Color(0.5464768, 0.5153497, 0.683078, 1)
 
 [node name="Room" type="Node3D" unique_id=231692508]
 
@@ -23,31 +46,37 @@ size = Vector3(16.356323, 4.430542, 30)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15, 0)
 operation = 2
 size = Vector3(7, 4.5, 7)
+material = SubResource("StandardMaterial3D_v87gb")
 
 [node name="Room2" type="CSGBox3D" parent="LevelGeometry" unique_id=145798667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3149414, 2.1288695, -12.442957)
 operation = 2
 size = Vector3(15.629883, 4.5577393, 5)
+material = SubResource("StandardMaterial3D_xtt4x")
 
 [node name="Room3" type="CSGBox3D" parent="LevelGeometry" unique_id=894141262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8683558, 2.15, -3.0032396)
 operation = 2
 size = Vector3(7.5146484, 4.5, 13.182739)
+material = SubResource("StandardMaterial3D_r0k1o")
 
 [node name="Room4" type="CSGBox3D" parent="LevelGeometry" unique_id=1123517668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.719805, 2.15, 10.861154)
 operation = 2
 size = Vector3(7, 4.5, 7.7557373)
+material = SubResource("StandardMaterial3D_rvviw")
 
 [node name="Room5" type="CSGBox3D" parent="LevelGeometry" unique_id=1441218317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2575345, 2.15, 9.424752)
 operation = 2
 size = Vector3(7.938965, 4.5, 10.64856)
+material = SubResource("StandardMaterial3D_dh7p6")
 
 [node name="Hallway1" type="CSGBox3D" parent="LevelGeometry" unique_id=36621062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4155945, -6.722)
 operation = 2
 size = Vector3(2, 2.968811, 6.62)
+material = SubResource("StandardMaterial3D_vvngo")
 
 [node name="Hallway2" type="CSGBox3D" parent="LevelGeometry" unique_id=720630696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.581381, 1.414267, 5.2898636)
@@ -62,3 +91,7 @@ size = Vector3(2, 2.9658813, 0.3984912)
 [node name="Floor" type="CSGBox3D" parent="LevelGeometry" unique_id=1440205341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.258301, 0, -0.055633545)
 size = Vector3(16.20752, 0.1, 29.908875)
+material = SubResource("StandardMaterial3D_dqrm3")
+
+[node name="cardboardBoxClosed" parent="." unique_id=1607417892 instance=ExtResource("1_jwkx8")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.094893, 0.049999475, -2.880065)
