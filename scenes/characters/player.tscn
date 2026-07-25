@@ -171,11 +171,14 @@ text = "Quit"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
 
 [node name="Cooldown" type="Timer" parent="." unique_id=1991595156]
-wait_time = 3.0
 one_shot = true
+
+[node name="Charge" type="Timer" parent="." unique_id=709035471]
+wait_time = 10.0
 
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/QuitGame" to="." method="_on_quit_game_button_up"]
 [connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Return" to="." method="_on_return_button_up"]
 [connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Quit" to="." method="_on_quit_button_up"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Charge" to="." method="_on_charge_timeout"]
