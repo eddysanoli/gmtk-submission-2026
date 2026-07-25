@@ -85,7 +85,7 @@ func _on_return_button_up():
 	Engine.time_scale = 1
 	
 func _on_quit_button_up():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 # ────────────────────DEATH─────────────────────────
 func kill():
@@ -94,7 +94,7 @@ func kill():
 	$CanvasLayer/DeathScreen.show()
 
 func _on_restart_button_up():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/enviorment/stage.tscn")
 
 func _on_quit_game_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

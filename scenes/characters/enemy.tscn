@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6gfg2ooue5n4"]
 
 [ext_resource type="Script" uid="uid://dro5tqkqtwgb5" path="res://scenes/characters/enemy.gd" id="1_7p1mj"]
-[ext_resource type="Texture2D" uid="uid://dt205favfek2s" path="res://assets/icon.svg" id="2_fulqv"]
+[ext_resource type="Texture2D" uid="uid://3s6m5v8qu2lt" path="res://graphics/test-sprite-1.png" id="2_fulqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -15,5 +15,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_rchu1")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=315829433]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.19747394, 0, 0, 0, 0.21028668, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
 texture = ExtResource("2_fulqv")

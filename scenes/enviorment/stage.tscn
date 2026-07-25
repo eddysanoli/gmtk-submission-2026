@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dswx1t1au7yw8"]
 
 [ext_resource type="PackedScene" uid="uid://d0fyx3qej33c" path="res://scenes/enviorment/room.tscn" id="1_beodt"]
-[ext_resource type="PackedScene" uid="uid://b63n4iaxj37xe" path="res://scenes/characters/player.tscn" id="2_03idf"]
+[ext_resource type="PackedScene" uid="uid://kcqd6ds2ndca" path="res://scenes/characters/player.tscn" id="2_03idf"]
 [ext_resource type="PackedScene" uid="uid://c6gfg2ooue5n4" path="res://scenes/characters/enemy.tscn" id="3_xm532"]
 
 [node name="Stage" type="Node3D" unique_id=1925008938]
