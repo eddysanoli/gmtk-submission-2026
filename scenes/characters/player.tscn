@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxwixu5dlfqso" path="res://scenes/characters/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://k42d40jsnw8f" path="res://graphics/hands/start/start_1.png" id="2_2l4js"]
 [ext_resource type="Texture2D" uid="uid://gtcr1iduvabl" path="res://graphics/hands/idle/idle_1.png" id="2_dg40j"]
+[ext_resource type="Texture2D" uid="uid://cdo2gmmofg0cw" path="res://graphics/toast/burn/burn_15.png" id="2_pue7u"]
 [ext_resource type="Texture2D" uid="uid://bjgb7jjh4smv" path="res://graphics/hands/idle/idle_2.png" id="3_7xgtv"]
 [ext_resource type="Texture2D" uid="uid://diedy3fqkd6ab" path="res://graphics/hands/start/start_2.png" id="3_jk2m4"]
 [ext_resource type="Texture2D" uid="uid://o4oumpk6s1dc" path="res://graphics/hands/idle/idle_3.png" id="4_6rclf"]
@@ -47,12 +48,76 @@
 [ext_resource type="Texture2D" uid="uid://brlon1axdrdex" path="res://graphics/toast/burn/burn_12.png" id="45_j057w"]
 [ext_resource type="Texture2D" uid="uid://crif4olprf6fd" path="res://graphics/toast/burn/burn_13.png" id="46_18mi3"]
 [ext_resource type="Texture2D" uid="uid://y2m6x4pfyabu" path="res://graphics/toast/burn/burn_14.png" id="47_3uc7m"]
+[ext_resource type="Texture2D" uid="uid://dxwrnaxtxybe3" path="res://graphics/clock/clock_1.png" id="48_3uc7m"]
 [ext_resource type="AudioStream" uid="uid://cv3emhql271mc" path="res://audio/vfx/Recargando.wav" id="48_yyjep"]
 [ext_resource type="AudioStream" uid="uid://mre2n7ooujy8" path="res://audio/vfx/Disparo recibido 2.wav" id="49_n7k00"]
+[ext_resource type="Texture2D" uid="uid://d1bty8wtdcir2" path="res://graphics/clock/clock_2.png" id="49_pue7u"]
 [ext_resource type="AudioStream" uid="uid://cl2unfeu7d52a" path="res://audio/vfx/Disparo recibido.wav" id="50_5bn3a"]
+[ext_resource type="Texture2D" uid="uid://dby6qskb40ii" path="res://graphics/clock/clock_3.png" id="50_7k8pb"]
+[ext_resource type="Texture2D" uid="uid://bsqrk3q5gtglr" path="res://graphics/clock/clock_4.png" id="51_5njio"]
 [ext_resource type="AudioStream" uid="uid://cgp8gs63wxmpv" path="res://audio/vfx/Sonido 3-Chef 4.wav" id="51_lnpl6"]
+[ext_resource type="Texture2D" uid="uid://bgxqrkblph5pa" path="res://graphics/clock/clock_5.png" id="52_aphfe"]
+[ext_resource type="Texture2D" uid="uid://c6k5sef7qm70a" path="res://graphics/clock/clock_6.png" id="53_dvq58"]
+[ext_resource type="Texture2D" uid="uid://8d5ajn2hfqo2" path="res://graphics/clock/clock_7.png" id="54_qgqs5"]
+[ext_resource type="Texture2D" uid="uid://cvqvslamsxbpt" path="res://graphics/clock/clock_8.png" id="55_e1rhj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rchu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pue7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7xgtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_nktl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_yyjep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6aj6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_n7k00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lnpl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5bn3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tnye5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_as8yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_qmarm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_w5bca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_j057w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_18mi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_3uc7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pue7u")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_34fwg"]
 animations = [{
@@ -177,54 +242,36 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rchu1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sr3o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_7xgtv")
+"texture": ExtResource("48_3uc7m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_nktl3")
+"texture": ExtResource("49_pue7u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_yyjep")
+"texture": ExtResource("50_7k8pb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_6aj6e")
+"texture": ExtResource("51_5njio")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_n7k00")
+"texture": ExtResource("52_aphfe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_lnpl6")
+"texture": ExtResource("53_dvq58")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_5bn3a")
+"texture": ExtResource("54_qgqs5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_tnye5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_as8yd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_qmarm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_w5bca")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_j057w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_18mi3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_3uc7m")
+"texture": ExtResource("55_e1rhj")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [node name="Player" type="CharacterBody3D" unique_id=2038812497 groups=["Player"]]
@@ -258,15 +305,23 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=552280806]
+position = Vector2(-221, -328)
+scale = Vector2(1, 0.9200007)
+sprite_frames = SubResource("SpriteFrames_rchu1")
+frame = 15
+frame_progress = 1.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=967550415]
 position = Vector2(-204.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
 animation = &"idle"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=552280806]
-position = Vector2(-221, -371)
-sprite_frames = SubResource("SpriteFrames_rchu1")
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=953313938]
+position = Vector2(457, -55)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_0sr3o")
 
 [node name="Interact" type="Control" parent="CanvasLayer" unique_id=1488856212]
 visible = false
@@ -439,6 +494,9 @@ one_shot = true
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
 
+[node name="Start" type="Timer" parent="." unique_id=1457531819]
+wait_time = 3.0
+
 [node name="Recharge" type="AudioStreamPlayer3D" parent="." unique_id=1308822080]
 stream = ExtResource("48_yyjep")
 
@@ -462,3 +520,4 @@ volume_db = 10.0
 [connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Quit" to="." method="_on_quit_button_up"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="Charge" to="." method="_on_charge_timeout"]
+[connection signal="timeout" from="Start" to="." method="_on_start_timeout"]
