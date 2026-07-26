@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dviq0d6bcjlb5" path="res://audio/vfx/Disparo.wav" id="3_ennuq"]
 [ext_resource type="AudioStream" uid="uid://cgp8gs63wxmpv" path="res://audio/vfx/Sonido 3-Chef 4.wav" id="4_i5y61"]
 
-[node name="Control2" type="Control" unique_id=466055187]
+[node name="Control3" type="Control" unique_id=466055187]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +25,5 @@ stream = ExtResource("3_ennuq")
 volume_db = -10.0
 
 [node name="ImDead" type="AudioStreamPlayer" parent="." unique_id=287713959]
-process_mode = 3
 stream = ExtResource("4_i5y61")
 volume_db = 10.0

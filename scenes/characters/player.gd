@@ -142,10 +142,10 @@ func _on_quit_button_up():
 func kill():
 	Engine.time_scale = 0
 	dead = true
-	BkMusic.dead()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/GunBase.hide()
 	$CanvasLayer/DeathScreen.show()
+	BkMusic.dead()
 
 func _on_restart_button_up():
 	#get_tree().change_scene_to_file("res://scenes/enviorment/stage.tscn")

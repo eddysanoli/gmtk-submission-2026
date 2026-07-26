@@ -80,6 +80,7 @@ func attempt_to_kill_player():
 	if dist_to_player > attack_range:
 		return
 	
+	
 	var eye_line = Vector3.UP * 1.5
 	var query = PhysicsRayQueryParameters3D.create(global_position+eye_line, player.global_position+eye_line, 1)
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
