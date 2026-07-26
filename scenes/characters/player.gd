@@ -4,10 +4,12 @@ extends CharacterBody3D
 @onready var spawn_location = $Position3D
 @onready var cooldown_timer = $Cooldown
 @onready var charge_timer = $Charge
+@onready var start_timer = $Start
 @onready var bread = preload("res://scenes/bread.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D
 @onready var interaction_raycast: RayCast3D = $RayCast3D
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D2
+@onready var timer_clock: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D3
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
@@ -57,6 +59,9 @@ func _process(_delta):
 	if !charging and Engine.time_scale != 0 and can_shoot:
 		charging = true
 		charge_timer.start()
+		start_timer.start()
+		timer_clock.show()
+		timer_clock.play("default")
 		charge_start_time = Time.get_ticks_msec()
 	if charging == true:
 		if Input.is_action_just_pressed("shoot") or charge_timeout == true:
@@ -116,6 +121,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "shoot":
 		animated_sprite_2d.play("idle")
 		
+func _on_start_timeout() -> void:
+	timer_clock.stop()
+	timer_clock.hide()
 
 # ────────────────────PAUSE─────────────────────────
 func pause():
