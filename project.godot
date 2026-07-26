@@ -17,7 +17,6 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-BkMusic="*uid://bhm5lf5yf8bpt"
 game_manager="*uid://4d3g7l5kfb2a"
 
 [display]
