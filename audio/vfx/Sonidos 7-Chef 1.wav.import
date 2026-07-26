@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hji82a0on6hu"
+path="res://.godot/imported/Sonidos 7-Chef 1.wav-5dec0377563783eef969267654eb5eac.sample"
+
+[deps]
+
+source_file="res://audio/vfx/Sonidos 7-Chef 1.wav"
+dest_files=["res://.godot/imported/Sonidos 7-Chef 1.wav-5dec0377563783eef969267654eb5eac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
