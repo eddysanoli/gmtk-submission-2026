@@ -24,6 +24,10 @@ game_manager="*uid://4d3g7l5kfb2a"
 window/size/viewport_width=1080
 window/size/viewport_height=720
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sky_3d/plugin.cfg")
+
 [input]
 
 move_forward={
