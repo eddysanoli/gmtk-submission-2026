@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhm5lf5yf8bpt"]
 
-[ext_resource type="AudioStream" uid="uid://cgaeyeik3p0dq" path="res://audio/music/Juego Tostadito (retoasted) versión 2.mp3" id="1_mlv30"]
+[ext_resource type="AudioStream" uid="uid://b4f4f574vyc7f" path="res://audio/music/Juego Tostadito (retoasted) versión 2.mp3" id="1_mlv30"]
 [ext_resource type="Script" uid="uid://t1vu4ajm44u5" path="res://audio/music/bk_music.gd" id="1_rb0jr"]
 
 [node name="Control" type="Control" unique_id=466055187]
