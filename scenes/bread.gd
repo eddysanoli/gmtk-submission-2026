@@ -16,7 +16,6 @@ func deal_damage():
 	var enemy = get_overlapping_bodies()
 	if enemy.is_in_group("Enemies"):
 		enemy.take_damage(bread_damage)
-		$Collide.play()
 
 # ─────────────────────────────────────────────
 func _process(delta):

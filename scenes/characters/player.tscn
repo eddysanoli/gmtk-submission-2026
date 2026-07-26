@@ -490,21 +490,6 @@ one_shot = true
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
 
-[node name="Recharge" type="AudioStreamPlayer3D" parent="." unique_id=1308822080]
-stream = ExtResource("48_yyjep")
-
-[node name="Pause" type="AudioStreamPlayer" parent="." unique_id=1287438839]
-stream = ExtResource("49_n7k00")
-volume_db = -10.0
-mix_target = 1
-
-[node name="Click" type="AudioStreamPlayer3D" parent="." unique_id=1239333214]
-stream = ExtResource("50_5bn3a")
-volume_db = -10.0
-
-[node name="ImDead" type="AudioStreamPlayer" parent="." unique_id=1979700005]
-stream = ExtResource("51_lnpl6")
-volume_db = 10.0
 [node name="Start" type="Timer" parent="." unique_id=1995313498]
 wait_time = 3.0
 

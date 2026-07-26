@@ -28,7 +28,6 @@ func _ready():
 	animated_sprite_2d.play("start")
 	Engine.time_scale = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	BkMusic.dead_music = true
 	
 	
 func _input(event):
@@ -94,8 +93,6 @@ func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
 	if charge_tier != 0:
 		animated_sprite_2d.play("shoot")
-		await get_tree().create_timer(0.4).timeout
-		$Recharge.play()
 		await get_tree().create_timer(0.7).timeout
 		var new_bread = bread.instantiate()
 		new_bread.charge_power = charge_tier
@@ -132,7 +129,6 @@ func _on_start_timeout() -> void:
 func pause():
 	Engine.time_scale = 0
 	charging = false
-	$Pause.play()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/PauseScreen.show()
 
@@ -140,13 +136,11 @@ func _on_return_button_up():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/PauseScreen.hide()
 	Engine.time_scale = 1
-	$Click.play()
 	
 func _on_quit_button_up():
 	Engine.time_scale = 1
 	$CanvasLayer.hide()
 	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
-	$Click.play()
 
 # ────────────────────DEATH─────────────────────────
 func kill():
@@ -155,19 +149,16 @@ func kill():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/GunBase.hide()
 	$CanvasLayer/DeathScreen.show()
-	BkMusic.dead()
 
 func _on_restart_button_up():
 	#get_tree().change_scene_to_file("res://scenes/enviorment/stage.tscn")
 	$CanvasLayer.hide()
-	$Click.play()
+	#Engine.time_scale = 1
 	game_manager.load_scene_with_loading_screen("res://scenes/enviorment/stage.tscn")
-	
 
 func _on_quit_game_button_up() -> void:
 	#get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	$CanvasLayer.hide()
-	$Click.play()
+	#Engine.time_scale = 1
 	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
-	
 	
