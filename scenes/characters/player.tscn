@@ -48,6 +48,8 @@
 [ext_resource type="Texture2D" uid="uid://crif4olprf6fd" path="res://graphics/toast/burn/burn_13.png" id="46_18mi3"]
 [ext_resource type="Texture2D" uid="uid://y2m6x4pfyabu" path="res://graphics/toast/burn/burn_14.png" id="47_3uc7m"]
 [ext_resource type="AudioStream" uid="uid://cv3emhql271mc" path="res://audio/vfx/Recargando.wav" id="48_yyjep"]
+[ext_resource type="AudioStream" uid="uid://mre2n7ooujy8" path="res://audio/vfx/Disparo recibido 2.wav" id="49_n7k00"]
+[ext_resource type="AudioStream" uid="uid://cl2unfeu7d52a" path="res://audio/vfx/Disparo recibido.wav" id="50_5bn3a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -438,6 +440,14 @@ wait_time = 10.0
 
 [node name="Recharge" type="AudioStreamPlayer3D" parent="." unique_id=1308822080]
 stream = ExtResource("48_yyjep")
+
+[node name="Pause" type="AudioStreamPlayer" parent="." unique_id=1287438839]
+stream = ExtResource("49_n7k00")
+volume_db = 10.0
+mix_target = 1
+
+[node name="Click" type="AudioStreamPlayer3D" parent="." unique_id=1239333214]
+stream = ExtResource("50_5bn3a")
 
 [connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]

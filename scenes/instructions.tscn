@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bgsgqt4tnra33" path="res://scenes/instructions.gd" id="1_dkfqi"]
 
-[node name="Control" type="Control" unique_id=571230079]
+[node name="Control2" type="Control" unique_id=571230079]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
