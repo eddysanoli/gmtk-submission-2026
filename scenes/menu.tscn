@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lhuissnsinpp"]
 
 [ext_resource type="Script" uid="uid://c5712bi1hmfph" path="res://scenes/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://d3o2lj5llfai3" path="res://graphics/logo.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://clkod1x66jrj0" path="res://graphics/cover_logo.png" id="2_vjb58"]
 
 [node name="Control3" type="Control" unique_id=891409615]
 layout_mode = 3
@@ -12,6 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280559055]
+position = Vector2(539.56354, 362.26257)
+scale = Vector2(0.86125344, 0.7001684)
+texture = ExtResource("2_vjb58")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2040819706]
 layout_mode = 1
 anchors_preset = 15
@@ -19,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.89, 0.60965, 0.5785, 1)
+color = Color(0.14, 0.0959, 0.091, 0.20392157)
 
 [node name="CreditsButton" type="Button" parent="." unique_id=2144264953]
 layout_mode = 1
@@ -51,11 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Start"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280559055]
-position = Vector2(550, 198.00002)
-scale = Vector2(0.512945, 0.512945)
-texture = ExtResource("2_vjb58")
 
 [connection signal="button_up" from="CreditsButton" to="." method="_on_credits_button_button_up"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
