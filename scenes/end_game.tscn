@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dlrd4r8uycfdx"]
+
+[ext_resource type="Script" uid="uid://brf1oxfhemnt7" path="res://scenes/end_game.gd" id="1_dpvxj"]
+
+[node name="Control" type="Control" unique_id=1247444076]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dpvxj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=242353021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.71023333, 0.6085063, 0.81913316, 1)
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1108796048]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 100.5
+offset_right = 48.0
+offset_bottom = 131.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[node name="Label2" type="Label" parent="." unique_id=17216768]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.0
+offset_top = -119.5
+offset_right = 405.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Friendship and toasts helped you to recover the The Carb-ine 3000. 
+You deserve a friendly spank 🤗."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1980406822]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.0
+offset_top = 82.0
+offset_right = 230.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Completed!"
+
+[connection signal="button_up" from="ReturnButton" to="." method="_on_return_button_button_up"]
