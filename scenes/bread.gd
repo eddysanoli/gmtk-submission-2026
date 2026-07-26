@@ -7,7 +7,7 @@ var bread_damage = 10
 
 # ─────────────────────────────────────────────
 func _ready():
-	bread_damage = 3*charge_power
+	bread_damage = 2*charge_power
 	print("power_tier =", charge_power)
 	print("bread_damage =", bread_damage)
 
