@@ -20,10 +20,10 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = false
 
-[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1393154640]
-stream = ExtResource("3_ennuq")
-volume_db = -10.0
-
 [node name="ImDead" type="AudioStreamPlayer" parent="." unique_id=287713959]
 stream = ExtResource("4_i5y61")
 volume_db = 10.0
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1393154640]
+stream = ExtResource("3_ennuq")
+volume_db = -10.0
