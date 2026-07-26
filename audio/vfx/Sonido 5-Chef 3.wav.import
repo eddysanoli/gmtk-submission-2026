@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brdg7gpip1vak"
+path="res://.godot/imported/Sonido 5-Chef 3.wav-042b70701ec7b424334f443ee9b1b62d.sample"
+
+[deps]
+
+source_file="res://audio/vfx/Sonido 5-Chef 3.wav"
+dest_files=["res://.godot/imported/Sonido 5-Chef 3.wav-042b70701ec7b424334f443ee9b1b62d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

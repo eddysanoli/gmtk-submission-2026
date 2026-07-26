@@ -31,6 +31,7 @@ func _physics_process(delta):
 	match state:
 		State.IDLE:
 			if can_see_player():
+				$SeeYou.play()
 				state = State.CHASE
 				last_seen_position = player.global_position
 		State.CHASE:
@@ -58,6 +59,7 @@ func chase_player(delta):
 	if can_see_player():
 		last_seen_position = player.global_position
 		lose_sight_timer = memory_time
+		
 	else:
 		lose_sight_timer -= delta
 		if lose_sight_timer <= 0:
@@ -78,6 +80,7 @@ func attempt_to_kill_player():
 	if dist_to_player > attack_range:
 		return
 	
+	
 	var eye_line = Vector3.UP * 1.5
 	var query = PhysicsRayQueryParameters3D.create(global_position+eye_line, player.global_position+eye_line, 1)
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
@@ -87,6 +90,8 @@ func attempt_to_kill_player():
 # ────────────────────Damage─────────────────────────
 func take_damage(damage):
 	health -= damage
+	$Collide.play()
+	$Hit.play()
 	if health <= 0:
 		kill()
 	state = State.HURT
@@ -97,6 +102,7 @@ func _on_animated_sprite_3d_animation_finished():
 		state = State.CHASE
 
 func kill():
+	$Death.play()
 	dead = true
 	$CollisionShape3D.disabled = true
 	hide()
