@@ -58,30 +58,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = -187.0
-offset_right = 418.0
-offset_bottom = -110.0
+offset_left = -185.0
+offset_top = -179.0
+offset_right = 185.0
+offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="CreditsButton" type="Button" parent="Instructions" unique_id=1634643878]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -408.0
-offset_top = -189.0
-offset_right = -38.0
-offset_bottom = -112.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Credits"
-
 [connection signal="button_up" from="Instructions/PlayButton" to="." method="_on_play_button_button_up"]
-[connection signal="button_up" from="Instructions/CreditsButton" to="." method="_on_credits_button_button_up"]
