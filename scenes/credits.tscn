@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://kx8x0o343wi0"]
 
 [ext_resource type="Script" uid="uid://bh2dkca3ftvka" path="res://scenes/credits.gd" id="1_0bpdh"]
-[ext_resource type="AudioStream" uid="uid://dviq0d6bcjlb5" path="res://audio/vfx/Disparo.wav" id="2_2ckv8"]
 
 [node name="Control" type="Control" unique_id=726435104]
 layout_mode = 3
@@ -57,9 +56,5 @@ Sky3D Asset by Tokisan Games
 Furniture Assets by http://kenney.nl/"
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Click" type="AudioStreamPlayer" parent="." unique_id=455124009]
-stream = ExtResource("2_2ckv8")
-volume_db = -10.0
 
 [connection signal="button_up" from="Credits/ReturnButton" to="." method="_on_return_button_button_up"]
