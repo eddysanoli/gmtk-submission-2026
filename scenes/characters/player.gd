@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var bread = preload("res://scenes/bread.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D
 @onready var interaction_raycast: RayCast3D = $RayCast3D
+@onready var animated_sprite_2d_2: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D2
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
@@ -94,7 +95,7 @@ func shoot(charge_start: float, charge_end: float):
 		new_bread.global_transform = spawn_location.global_transform
 		cooldown_timer.start()
 	if charge_tier == 0:
-		print("Oops")
+		animated_sprite_2d_2.play("default")
 		cooldown_timer.start()
 	
 func calculate_power(charging_time):
