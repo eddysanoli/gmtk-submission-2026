@@ -13,10 +13,26 @@
 [ext_resource type="Texture2D" uid="uid://cocrq7bcxaokq" path="res://graphics/hands/start/start_5.png" id="6_xrqxk"]
 [ext_resource type="Texture2D" uid="uid://dv0uaf5ox8i1" path="res://graphics/hands/idle/start_6.png" id="7_eir2k"]
 [ext_resource type="Texture2D" uid="uid://db521gx4xt2nj" path="res://graphics/hands/start/start_6.png" id="7_g66nw"]
+[ext_resource type="Texture2D" uid="uid://dmeiar6kphjgv" path="res://graphics/hands/shoot/shoot_1.png" id="8_dg40j"]
 [ext_resource type="Texture2D" uid="uid://d2cv5n7ko1fha" path="res://graphics/hands/start/start_7.png" id="8_rpnd8"]
+[ext_resource type="Texture2D" uid="uid://cs87mmc86k3ti" path="res://graphics/hands/shoot/shoot_2.png" id="9_7xgtv"]
 [ext_resource type="Texture2D" uid="uid://buobidd5tmc5k" path="res://graphics/hands/start/start_8.png" id="9_d6tgn"]
 [ext_resource type="Texture2D" uid="uid://cjenx03vup8r3" path="res://graphics/hands/start/start_9.png" id="10_3wg1y"]
+[ext_resource type="Texture2D" uid="uid://dhx2w7ow6cj6m" path="res://graphics/hands/shoot/shoot_3.png" id="10_6rclf"]
 [ext_resource type="Texture2D" uid="uid://bn8cgdj0bxd36" path="res://graphics/hands/start/start_10.png" id="11_kmyvj"]
+[ext_resource type="Texture2D" uid="uid://duwwavigbg2r2" path="res://graphics/hands/shoot/shoot_4.png" id="11_s0anf"]
+[ext_resource type="Texture2D" uid="uid://d2f55xhjw5tu8" path="res://graphics/hands/shoot/shoot_5.png" id="12_s1x7u"]
+[ext_resource type="Texture2D" uid="uid://6rxpsjp43oix" path="res://graphics/hands/shoot/shoot_6.png" id="13_c3kfx"]
+[ext_resource type="Texture2D" uid="uid://jiijtf1vomnb" path="res://graphics/hands/shoot/shoot_7.png" id="14_hdner"]
+[ext_resource type="Texture2D" uid="uid://e7kcqkg0jn0r" path="res://graphics/hands/shoot/shoot_8.png" id="15_m38kj"]
+[ext_resource type="Texture2D" uid="uid://cc6hxskoord8w" path="res://graphics/hands/shoot/shoot_9.png" id="16_v1y1o"]
+[ext_resource type="Texture2D" uid="uid://bx86sg46p67fp" path="res://graphics/hands/shoot/shoot_10.png" id="17_hnvwh"]
+[ext_resource type="Texture2D" uid="uid://bqmv373gypqvn" path="res://graphics/hands/shoot/shoot_11.png" id="18_rfou0"]
+[ext_resource type="Texture2D" uid="uid://b7ws2b8xhf5l2" path="res://graphics/hands/shoot/shoot_12.png" id="19_vkt2s"]
+[ext_resource type="Texture2D" uid="uid://huagfii721my" path="res://graphics/hands/shoot/shoot_13.png" id="20_6ux5t"]
+[ext_resource type="Texture2D" uid="uid://c4hujcpbbtl2b" path="res://graphics/hands/shoot/shoot_14.png" id="21_lvr6b"]
+[ext_resource type="Texture2D" uid="uid://ckesdwpkvpgf4" path="res://graphics/hands/shoot/shoot_15.png" id="22_nktl3"]
+[ext_resource type="Texture2D" uid="uid://bv1n5bh4vrwxh" path="res://graphics/hands/shoot/shoot_16.png" id="23_yyjep"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -52,6 +68,59 @@ animations = [{
 }],
 "loop": 0,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_dg40j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7xgtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6rclf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s0anf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s1x7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c3kfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hdner")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m38kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v1y1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hnvwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rfou0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vkt2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6ux5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lvr6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_nktl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yyjep")
+}],
+"loop": 0,
+"name": &"shoot",
 "speed": 5.0
 }, {
 "frames": [{
@@ -118,12 +187,10 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=967550415]
-position = Vector2(-247.00002, -234)
+position = Vector2(-204.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
 animation = &"idle"
-frame = 6
-frame_progress = 1.0
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1755915098]
 visible = false

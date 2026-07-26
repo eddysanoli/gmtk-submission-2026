@@ -68,6 +68,8 @@ func _on_charge_timeout():
 	
 func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
+	animated_sprite_2d.play("shoot")
+	await get_tree().create_timer(1.3).timeout
 	var new_bread = bread.instantiate()
 	new_bread.charge_power = charge_tier
 	get_node("../Objects").add_child(new_bread)
@@ -88,6 +90,8 @@ func _on_cooldown_timeout():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "start":
 		can_shoot = true
+		animated_sprite_2d.play("idle")
+	if animated_sprite_2d.animation == "shoot":
 		animated_sprite_2d.play("idle")
 		
 
