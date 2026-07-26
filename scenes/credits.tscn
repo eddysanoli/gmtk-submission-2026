@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://kx8x0o343wi0"]
+
+[ext_resource type="Script" uid="uid://bh2dkca3ftvka" path="res://scenes/credits.gd" id="1_0bpdh"]
+
+[node name="Control" type="Control" unique_id=726435104]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bpdh")
+
+[node name="Credits" type="ColorRect" parent="." unique_id=1632516262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28627452, 0.49019608, 0.3647059, 1)
+
+[node name="ReturnButton" type="Button" parent="Credits" unique_id=745837103]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -177.0
+offset_right = 185.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Return"
+
+[node name="Label" type="Label" parent="Credits" unique_id=236016746]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 102.0
+offset_top = 89.0
+offset_right = -74.5
+offset_bottom = 492.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Art & Animation - Eddy
+Game Design & Coding - almendro_w
+Music & Sound Effects - Spuk
+Helper & GIT Master - Dredrin
+
+Sky3D Asset by Tokisan Games
+Furniture Assets by http://kenney.nl/"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="button_up" from="Credits/ReturnButton" to="." method="_on_return_button_button_up"]
