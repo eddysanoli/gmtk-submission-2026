@@ -87,6 +87,8 @@ func _on_cooldown_timeout():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "start":
 		can_shoot = true
+		animated_sprite_2d.play("idle")
+		
 
 # ────────────────────PAUSE─────────────────────────
 func pause():
