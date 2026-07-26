@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://brlon1axdrdex" path="res://graphics/toast/burn/burn_12.png" id="45_j057w"]
 [ext_resource type="Texture2D" uid="uid://crif4olprf6fd" path="res://graphics/toast/burn/burn_13.png" id="46_18mi3"]
 [ext_resource type="Texture2D" uid="uid://y2m6x4pfyabu" path="res://graphics/toast/burn/burn_14.png" id="47_3uc7m"]
+[ext_resource type="AudioStream" uid="uid://cv3emhql271mc" path="res://audio/vfx/Recargando.wav" id="48_yyjep"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -434,6 +435,9 @@ one_shot = true
 
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
+
+[node name="Recharge" type="AudioStreamPlayer3D" parent="." unique_id=1308822080]
+stream = ExtResource("48_yyjep")
 
 [connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]

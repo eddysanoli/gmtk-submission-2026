@@ -87,6 +87,8 @@ func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
 	if charge_tier != 0:
 		animated_sprite_2d.play("shoot")
+		await get_tree().create_timer(0.4).timeout
+		$Recharge.play()
 		await get_tree().create_timer(0.7).timeout
 		var new_bread = bread.instantiate()
 		new_bread.charge_power = charge_tier
