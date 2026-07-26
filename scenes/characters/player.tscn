@@ -506,9 +506,6 @@ one_shot = true
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
 
-[node name="Start" type="Timer" parent="." unique_id=1457531819]
-wait_time = 3.0
-
 [node name="Recharge" type="AudioStreamPlayer3D" parent="." unique_id=1308822080]
 stream = ExtResource("48_yyjep")
 
@@ -526,6 +523,7 @@ stream = ExtResource("51_lnpl6")
 volume_db = 10.0
 
 [node name="countdown_timer" type="Timer" parent="." unique_id=507803961]
+wait_time = 1.0
 one_shot = true
 ignore_time_scale = true
 
@@ -536,5 +534,4 @@ ignore_time_scale = true
 [connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Quit" to="." method="_on_quit_button_up"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="Charge" to="." method="_on_charge_timeout"]
-[connection signal="timeout" from="Start" to="." method="_on_start_timeout"]
-[connection signal="timeout" from="countdown_timer" to="." method="_on_countdown_timeout"]
+[connection signal="timeout" from="countdown_timer" to="." method="_on_countdown_timer_timeout"]

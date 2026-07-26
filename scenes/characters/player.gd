@@ -4,7 +4,6 @@ extends CharacterBody3D
 @onready var spawn_location = $Position3D
 @onready var cooldown_timer = $Cooldown
 @onready var charge_timer = $Charge
-@onready var start_timer = $Start
 @onready var bread = preload("res://scenes/bread.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D
 @onready var interaction_raycast: RayCast3D = $RayCast3D
@@ -15,17 +14,19 @@ extends CharacterBody3D
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
+const FADE_AT_COUNT = 6
 
 var charging = false
-var charge_start_time : float
+var charge_start_time: float
 var charge_tier = 0
 var charge_timeout = false
 var can_shoot = false
 var dead = false
 
 var counting = 10
+var fade_tween: Tween
 
-var interaction_is_reset : bool = true
+var interaction_is_reset: bool = true
 
 # ─────────────────────────────────────────────
 func _ready():
@@ -63,15 +64,10 @@ func _process(_delta):
 			interaction_is_reset = true
 	if !charging and Engine.time_scale != 0 and can_shoot:
 		charging = true
-		counting = 10
 		charge_timer.start()
-		countdown_timer.start()
-		start_timer.start()
-		timer_clock.show()
-		timer_clock.play("default")
+		show_countdown()
 		charge_start_time = Time.get_ticks_msec()
 	if charging == true:
-		countdown_timer.start()
 		if Input.is_action_just_pressed("shoot") or charge_timeout == true:
 			charging = false
 			can_shoot = false
@@ -97,8 +93,21 @@ func _on_charge_timeout():
 		return
 	charge_timeout = true
 	
+func show_countdown():
+	if fade_tween:
+		fade_tween.kill()
+	countdown_timer.stop()
+	counting = 10
+	countdown_timer.start()
+	timer_clock.modulate.a = 1.0
+	timer_clock.show()
+	timer_clock.play("default")
+	countdown.modulate.a = 1.0
+	countdown.text = str(counting)
+	countdown.show()
+
 func shoot(charge_start: float, charge_end: float):
-	calculate_power(charge_end-charge_start)
+	calculate_power(charge_end - charge_start)
 	if charge_tier != 0:
 		animated_sprite_2d.play("shoot")
 		await get_tree().create_timer(0.4).timeout
@@ -114,7 +123,7 @@ func shoot(charge_start: float, charge_end: float):
 		cooldown_timer.start()
 	
 func calculate_power(charging_time):
-	var charge = floor(charging_time/1000)
+	var charge = floor(charging_time / 1000)
 	print(charge)
 	if charging_time < 9000:
 		charge_tier = charge + 1
@@ -131,9 +140,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "shoot":
 		animated_sprite_2d.play("idle")
 		
-func _on_start_timeout() -> void:
+func fade_out_countdown() -> void:
 	timer_clock.stop()
-	timer_clock.hide()
+	fade_tween = create_tween()
+	fade_tween.set_parallel(true)
+	fade_tween.tween_property(timer_clock, "modulate:a", 0.0, 0.5)
+	fade_tween.tween_property(countdown, "modulate:a", 0.0, 0.5)
+	fade_tween.chain().tween_callback(func():
+		timer_clock.hide()
+		countdown.hide()
+	)
 
 # ────────────────────PAUSE─────────────────────────
 func pause():
@@ -180,6 +196,8 @@ func _on_quit_game_button_up() -> void:
 	
 func _on_countdown_timer_timeout() -> void:
 	counting -= 1
-	print("counting")
 	countdown.text = str(counting)
-	
+	if counting <= FADE_AT_COUNT:
+		fade_out_countdown()
+	else:
+		countdown_timer.start()
