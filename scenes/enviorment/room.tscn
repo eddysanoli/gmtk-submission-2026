@@ -958,9 +958,6 @@ transform = Transform3D(0.6524788, 0, -0.757807, 0, 1, 0, 0.757807, 0, 0.6524788
 [node name="loaf-baguette18" parent="." unique_id=1099267405 instance=ExtResource("38_767f4")]
 transform = Transform3D(0.6524788, 0, -0.757807, 0, 1, 0, 0.757807, 0, 0.6524788, 9.158554, 1.3100002, 8.822577)
 
-[node name="loaf-baguette19" parent="." unique_id=1885050945 instance=ExtResource("38_767f4")]
-transform = Transform3D(0.6524788, 0, -0.757807, 0, 1, 0, 0.757807, 0, 0.6524788, 9.158554, 1.3100002, 8.362945)
-
 [node name="loaf-baguette20" parent="." unique_id=1197048281 instance=ExtResource("38_767f4")]
 transform = Transform3D(0.6524788, 0, -0.757807, 0, 1, 0, 0.757807, 0, 0.6524788, 9.158554, 1.3100002, 7.9092894)
 
@@ -1146,3 +1143,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.273036, 1.5335021, 12.28793
 
 [node name="bag-flat30" parent="." unique_id=842505956 instance=ExtResource("12_dv271")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.203347, 1.5335022, 11.651804)
+
+[node name="bag-flat31" parent="." unique_id=1849272339 instance=ExtResource("12_dv271")]
+transform = Transform3D(0.939546, 0, 0.34242272, 0, 1, 0, -0.34242272, 0, 0.939546, 9.335877, 0.50499964, -2.996051)
+
+[node name="bag-flat32" parent="." unique_id=1396067599 instance=ExtResource("12_dv271")]
+transform = Transform3D(0.939546, 0, 0.34242272, 0, 1, 0, -0.34242272, 0, 0.939546, 9.335877, 0.50499964, -3.588493)
+
+[node name="bag-flat33" parent="." unique_id=967606590 instance=ExtResource("12_dv271")]
+transform = Transform3D(0.939546, 0, 0.34242272, 0, 1, 0, -0.34242272, 0, 0.939546, 9.335877, 0.50499964, -4.0821476)
+
+[node name="cup4" parent="." unique_id=1202139258 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.021974, 0.50499964, -4.8047814)
+
+[node name="cup5" parent="." unique_id=1899485465 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.021974, 0.50499964, -5.208383)
+
+[node name="cup6" parent="." unique_id=1011544651 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.021974, 0.50499964, -5.584253)
+
+[node name="cup7" parent="." unique_id=531957558 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.021974, 0.50499964, -5.971328)
+
+[node name="cup8" parent="." unique_id=437207862 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.347895, 0.50499964, -5.971328)
+
+[node name="cup9" parent="." unique_id=1290384077 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.347895, 0.50499964, -5.6099696)
+
+[node name="cup10" parent="." unique_id=1505220857 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.347895, 0.50499964, -5.2413588)
+
+[node name="cup11" parent="." unique_id=1333684643 instance=ExtResource("33_5lkio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.347895, 0.50499964, -4.863111)
+
+[node name="loaf-round10" parent="." unique_id=478074128 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, 5.533565)
+
+[node name="loaf-round11" parent="." unique_id=178204300 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, 4.831798)
+
+[node name="loaf-round12" parent="." unique_id=282320213 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, 4.0798597)
+
+[node name="loaf-round13" parent="." unique_id=951581235 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, 3.31593)
+
+[node name="loaf-round14" parent="." unique_id=486729972 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, 2.4978094)
+
+[node name="loaf-round15" parent="." unique_id=1956523914 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, 1.6418107)
+
+[node name="loaf-round16" parent="." unique_id=84852334 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, -0.2609527)
+
+[node name="loaf-round17" parent="." unique_id=615374527 instance=ExtResource("49_6xgki")]
+transform = Transform3D(0.7398262, 0, 0.67279804, 0, 1, 0, -0.67279804, 0, 0.7398262, 9.234925, 1.3100004, -1.448766)

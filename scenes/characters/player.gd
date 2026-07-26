@@ -69,7 +69,7 @@ func _on_charge_timeout():
 func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
 	animated_sprite_2d.play("shoot")
-	await get_tree().create_timer(1.3).timeout
+	await get_tree().create_timer(0.7).timeout
 	var new_bread = bread.instantiate()
 	new_bread.charge_power = charge_tier
 	get_node("../Objects").add_child(new_bread)
@@ -109,7 +109,7 @@ func _on_return_button_up():
 	
 func _on_quit_button_up():
 	Engine.time_scale = 1
-	$CanvasLayer/PauseScreen.hide()
+	$CanvasLayer.hide()
 	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
 
 # ────────────────────DEATH─────────────────────────
@@ -117,6 +117,7 @@ func kill():
 	Engine.time_scale = 0
 	dead = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer/GunBase.hide()
 	$CanvasLayer/DeathScreen.show()
 
 func _on_restart_button_up():

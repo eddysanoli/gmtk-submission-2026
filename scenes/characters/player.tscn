@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bxwixu5dlfqso" path="res://scenes/characters/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://k42d40jsnw8f" path="res://graphics/hands/start/start_1.png" id="2_2l4js"]
-[ext_resource type="Texture2D" uid="uid://6sdfxofsb4i" path="res://graphics/hands/idle/start_1.png" id="2_rpnd8"]
-[ext_resource type="Texture2D" uid="uid://cuyykcsjphrbm" path="res://graphics/hands/idle/start_2.png" id="3_d6tgn"]
+[ext_resource type="Texture2D" uid="uid://gtcr1iduvabl" path="res://graphics/hands/idle/idle_1.png" id="2_dg40j"]
+[ext_resource type="Texture2D" uid="uid://bjgb7jjh4smv" path="res://graphics/hands/idle/idle_2.png" id="3_7xgtv"]
 [ext_resource type="Texture2D" uid="uid://diedy3fqkd6ab" path="res://graphics/hands/start/start_2.png" id="3_jk2m4"]
-[ext_resource type="Texture2D" uid="uid://cbt8x1c4nbkpu" path="res://graphics/hands/idle/start_3.png" id="4_3wg1y"]
+[ext_resource type="Texture2D" uid="uid://o4oumpk6s1dc" path="res://graphics/hands/idle/idle_3.png" id="4_6rclf"]
 [ext_resource type="Texture2D" uid="uid://2rfyy0plixot" path="res://graphics/hands/start/start_3.png" id="4_xhtjm"]
 [ext_resource type="Texture2D" uid="uid://cv3bf77eshbwn" path="res://graphics/hands/start/start_4.png" id="5_k4v7y"]
-[ext_resource type="Texture2D" uid="uid://6uu2tsyo1pce" path="res://graphics/hands/idle/start_4.png" id="5_kmyvj"]
-[ext_resource type="Texture2D" uid="uid://ba626c5d6yw7" path="res://graphics/hands/idle/start_5.png" id="6_a2luo"]
+[ext_resource type="Texture2D" uid="uid://d0ajpnaxi4tjs" path="res://graphics/hands/idle/idle_4.png" id="5_s0anf"]
+[ext_resource type="Texture2D" uid="uid://qdkr0bcfkp2e" path="res://graphics/hands/idle/idle_5.png" id="6_s1x7u"]
 [ext_resource type="Texture2D" uid="uid://cocrq7bcxaokq" path="res://graphics/hands/start/start_5.png" id="6_xrqxk"]
-[ext_resource type="Texture2D" uid="uid://dv0uaf5ox8i1" path="res://graphics/hands/idle/start_6.png" id="7_eir2k"]
+[ext_resource type="Texture2D" uid="uid://csbeow7adfxld" path="res://graphics/hands/idle/idle_6.png" id="7_c3kfx"]
 [ext_resource type="Texture2D" uid="uid://db521gx4xt2nj" path="res://graphics/hands/start/start_6.png" id="7_g66nw"]
 [ext_resource type="Texture2D" uid="uid://dmeiar6kphjgv" path="res://graphics/hands/shoot/shoot_1.png" id="8_dg40j"]
 [ext_resource type="Texture2D" uid="uid://d2cv5n7ko1fha" path="res://graphics/hands/start/start_7.png" id="8_rpnd8"]
@@ -40,83 +40,83 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rpnd8")
+"texture": ExtResource("2_dg40j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_d6tgn")
+"texture": ExtResource("3_7xgtv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_rpnd8")
+"texture": ExtResource("2_dg40j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_d6tgn")
+"texture": ExtResource("3_7xgtv")
 }, {
 "duration": 2.0,
-"texture": ExtResource("2_rpnd8")
+"texture": ExtResource("2_dg40j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3wg1y")
+"texture": ExtResource("4_6rclf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_kmyvj")
+"texture": ExtResource("5_s0anf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_a2luo")
+"texture": ExtResource("6_s1x7u")
 }, {
 "duration": 25.0,
-"texture": ExtResource("7_eir2k")
+"texture": ExtResource("7_c3kfx")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("8_dg40j")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("9_7xgtv")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("10_6rclf")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("11_s0anf")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("12_s1x7u")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("13_c3kfx")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("14_hdner")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("15_m38kj")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("16_v1y1o")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("17_hnvwh")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("18_rfou0")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("19_vkt2s")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("20_6ux5t")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("21_lvr6b")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("22_nktl3")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("23_yyjep")
 }],
 "loop": 0,
@@ -190,7 +190,7 @@ grow_vertical = 0
 position = Vector2(-204.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
-animation = &"idle"
+animation = &"shoot"
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1755915098]
 visible = false
