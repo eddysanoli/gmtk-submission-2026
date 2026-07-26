@@ -443,7 +443,6 @@ stream = ExtResource("48_yyjep")
 
 [node name="Pause" type="AudioStreamPlayer" parent="." unique_id=1287438839]
 stream = ExtResource("49_n7k00")
-volume_db = 10.0
 mix_target = 1
 
 [node name="Click" type="AudioStreamPlayer3D" parent="." unique_id=1239333214]
