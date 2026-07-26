@@ -48,6 +48,8 @@
 [ext_resource type="PackedScene" uid="uid://q5fdaojradph" path="res://assets/food/egg-half.glb" id="46_iao6n"]
 [ext_resource type="PackedScene" uid="uid://ch062bcxol5mq" path="res://assets/food/whisk.glb" id="47_w5ykl"]
 [ext_resource type="PackedScene" uid="uid://bhky35eu7vcu0" path="res://assets/food/cooking-spoon.glb" id="48_6xgki"]
+[ext_resource type="PackedScene" uid="uid://be87nqnisdwd0" path="res://assets/food/loaf-round.glb" id="49_6xgki"]
+[ext_resource type="PackedScene" uid="uid://b73ugl4pv7prn" path="res://assets/food/cake-birthday.glb" id="50_vxwbj"]
 
 [sub_resource type="Environment" id="Environment_rchu1"]
 
@@ -780,3 +782,93 @@ transform = Transform3D(0.09906931, -0.12599353, 0.98707193, -0.4555728, 0.87614
 
 [node name="cooking-spoon2" parent="." unique_id=1050992445 instance=ExtResource("48_6xgki")]
 transform = Transform3D(0.38669872, 0, -0.9222061, 0, 1, 0, 0.9222061, 0, 0.38669872, -11.1461115, 1.3520403, -39.015377)
+
+[node name="plate14" parent="." unique_id=1630147399 instance=ExtResource("16_ydxjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0599203, 0.94982934, -18.318857)
+
+[node name="plate15" parent="." unique_id=1154479590 instance=ExtResource("16_ydxjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.085026, 0.94982946, -19.324726)
+
+[node name="plate-deep4" parent="." unique_id=1772401291 instance=ExtResource("40_yne02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.029895, 0.3661555, -18.4157)
+
+[node name="plate-deep5" parent="." unique_id=197476018 instance=ExtResource("40_yne02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0230985, 0.36615562, -19.333752)
+
+[node name="loaf-baguette3" parent="." unique_id=1950324853 instance=ExtResource("38_767f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.106466, 0.41789925, -33.438824)
+
+[node name="loaf-baguette4" parent="." unique_id=1866016898 instance=ExtResource("38_767f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.106466, 0.41789925, -33.90611)
+
+[node name="loaf-baguette5" parent="." unique_id=2039720237 instance=ExtResource("38_767f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.109348, 0.41789925, -33.90611)
+
+[node name="loaf-baguette6" parent="." unique_id=1970951919 instance=ExtResource("38_767f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.109348, 0.41789925, -33.452366)
+
+[node name="loaf-round2" parent="." unique_id=554386627 instance=ExtResource("49_6xgki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1414437, 1.0970999, -33.84298)
+
+[node name="loaf-round3" parent="." unique_id=1325859790 instance=ExtResource("49_6xgki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1414437, 1.0970999, -33.42502)
+
+[node name="loaf-round4" parent="." unique_id=800675822 instance=ExtResource("49_6xgki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9620595, 1.0970999, -33.42502)
+
+[node name="loaf-round5" parent="." unique_id=416734055 instance=ExtResource("49_6xgki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9620595, 1.0970999, -33.93984)
+
+[node name="pie3" parent="." unique_id=1284225378 instance=ExtResource("34_vixxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1394687, 1.7762995, -33.64794)
+
+[node name="pie4" parent="." unique_id=726450789 instance=ExtResource("34_vixxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.131014, 1.7762995, -33.64794)
+
+[node name="cake-birthday" parent="." unique_id=2070078905 instance=ExtResource("50_vxwbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85062, 1.7762995, -33.542393)
+
+[node name="cake2" parent="." unique_id=171370617 instance=ExtResource("43_7ixx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.783183, 1.7762995, -33.57037)
+
+[node name="muffin2" parent="." unique_id=395549655 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.780436, 1.0970998, -33.78371)
+
+[node name="muffin3" parent="." unique_id=291172165 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.134355, 1.0970998, -33.78371)
+
+[node name="muffin4" parent="." unique_id=1792323149 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.535107, 1.0970998, -33.78371)
+
+[node name="muffin5" parent="." unique_id=2005344014 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9538765, 1.0970998, -33.78371)
+
+[node name="muffin6" parent="." unique_id=999636919 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9538765, 1.0970998, -33.402935)
+
+[node name="muffin7" parent="." unique_id=2131911757 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.494419, 1.0970998, -33.402935)
+
+[node name="muffin8" parent="." unique_id=1089533446 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.099568, 1.0970998, -33.402935)
+
+[node name="muffin9" parent="." unique_id=885254648 instance=ExtResource("18_n8tcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.748808, 1.0970998, -33.402935)
+
+[node name="bag-flat17" parent="." unique_id=1551678869 instance=ExtResource("12_dv271")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.629434, 0.41789913, -33.61689)
+
+[node name="bag-flat18" parent="." unique_id=1412439590 instance=ExtResource("12_dv271")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.34857, 0.41789913, -33.61689)
+
+[node name="bag-flat19" parent="." unique_id=240391783 instance=ExtResource("12_dv271")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.05946, 0.41789913, -33.61689)
+
+[node name="bag-flat20" parent="." unique_id=1032183922 instance=ExtResource("12_dv271")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.05946, 0.53694445, -33.61689)
+
+[node name="bag-flat21" parent="." unique_id=264264802 instance=ExtResource("12_dv271")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.333321, 0.53694445, -33.61689)
+
+[node name="bag-flat22" parent="." unique_id=1975166049 instance=ExtResource("12_dv271")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.585917, 0.53694445, -33.61689)
