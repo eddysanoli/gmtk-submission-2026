@@ -124,34 +124,34 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("2_2l4js")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("3_jk2m4")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("4_xhtjm")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("5_k4v7y")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("6_xrqxk")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("7_g66nw")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("8_rpnd8")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("9_d6tgn")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("10_3wg1y")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("11_kmyvj")
 }],
 "loop": 0,
@@ -167,6 +167,10 @@ script = ExtResource("1_3vyb7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1773903997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_rchu1")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=631700603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -2)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=834289658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -190,7 +194,33 @@ grow_vertical = 0
 position = Vector2(-204.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
-animation = &"shoot"
+animation = &"start"
+
+[node name="Interact" type="Control" parent="CanvasLayer" unique_id=1488856212]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Interact" unique_id=326794524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -41.0
+offset_right = 146.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"F\" to pay respects"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1755915098]
 visible = false
@@ -336,10 +366,6 @@ one_shot = true
 
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
-
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=631700603]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-target_position = Vector3(0, 0, -2)
 
 [connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]

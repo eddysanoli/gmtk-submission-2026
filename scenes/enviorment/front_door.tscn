@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cvop2cpsrlmvq"]
+
+[ext_resource type="PackedScene" uid="uid://b0ddwgc10hv5k" path="res://assets/furniture/doorwayFront.fbx" id="1_bsfdq"]
+[ext_resource type="Script" uid="uid://gc6gsko7r41u" path="res://scenes/enviorment/front_door.gd" id="1_u7v8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34fwg"]
+size = Vector3(1.446579, 3.036499, 0.52441406)
+
+[node name="FrontDoor" type="StaticBody3D" unique_id=1168775571]
+script = ExtResource("1_u7v8h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=431927662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73703766, 1.5117798, 0.23779297)
+shape = SubResource("BoxShape3D_34fwg")
+
+[node name="doorwayFront" parent="." unique_id=163623643 instance=ExtResource("1_bsfdq")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

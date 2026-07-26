@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var charge_timer = $Charge
 @onready var bread = preload("res://scenes/bread.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D
+@onready var interaction_raycast: RayCast3D = $RayCast3D
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
@@ -16,6 +17,8 @@ var charge_tier = 0
 var charge_timeout = false
 var can_shoot = false
 var dead = false
+
+var interaction_is_reset : bool = true
 
 # ─────────────────────────────────────────────
 func _ready():
@@ -29,6 +32,11 @@ func _input(event):
 		return
 	if event is InputEventMouseMotion and Engine.time_scale != 0:
 		rotation_degrees.y -= event.relative.x * 0.5
+	if event.is_action_pressed("interact"):
+		if interaction_raycast.is_colliding():
+			var interactable = interaction_raycast.get_collider()
+			if interactable.has_method("interact"):
+				interactable.interact()
 
 # ─────────────────────────────────────────────
 func _process(_delta):
@@ -36,6 +44,15 @@ func _process(_delta):
 		return
 	if Input.is_action_just_pressed("Pause"):
 		pause()
+	if interaction_raycast.is_colliding():
+		var interactable = interaction_raycast.get_collider()
+		interaction_is_reset = false
+		if interactable != null and interactable.has_method("interact"):
+			$CanvasLayer/Interact.show()
+	else:
+		if !interaction_is_reset:
+			$CanvasLayer/Interact.hide()
+			interaction_is_reset = true
 	if !charging and Engine.time_scale != 0 and can_shoot:
 		charging = true
 		charge_timer.start()
@@ -68,13 +85,17 @@ func _on_charge_timeout():
 	
 func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end-charge_start)
-	animated_sprite_2d.play("shoot")
-	await get_tree().create_timer(0.7).timeout
-	var new_bread = bread.instantiate()
-	new_bread.charge_power = charge_tier
-	get_node("../Objects").add_child(new_bread)
-	new_bread.global_transform = spawn_location.global_transform
-	cooldown_timer.start()
+	if charge_tier != 0:
+		animated_sprite_2d.play("shoot")
+		await get_tree().create_timer(0.7).timeout
+		var new_bread = bread.instantiate()
+		new_bread.charge_power = charge_tier
+		get_node("../Objects").add_child(new_bread)
+		new_bread.global_transform = spawn_location.global_transform
+		cooldown_timer.start()
+	if charge_tier == 0:
+		print("Oops")
+		cooldown_timer.start()
 	
 func calculate_power(charging_time):
 	var charge = floor(charging_time/1000)

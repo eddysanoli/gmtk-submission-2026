@@ -1,10 +1,57 @@
 [gd_scene format=3 uid="uid://bdwlwbrotytv0"]
 
 [ext_resource type="Script" uid="uid://c2bkkbmr80l1d" path="res://scenes/bread.gd" id="1_svkq2"]
-[ext_resource type="Texture2D" uid="uid://dt205favfek2s" path="res://assets/icon.svg" id="2_16yqp"]
+[ext_resource type="Texture2D" uid="uid://33kplor31jdg" path="res://graphics/toast/toast_1.png" id="2_hem5d"]
+[ext_resource type="Texture2D" uid="uid://jemy5ajjyp55" path="res://graphics/toast/toast_2.png" id="3_nyn3p"]
+[ext_resource type="Texture2D" uid="uid://b8dbbsurdulwi" path="res://graphics/toast/toast_3.png" id="4_vgbvh"]
+[ext_resource type="Texture2D" uid="uid://bfcu0vifgeqnh" path="res://graphics/toast/toast_4.png" id="5_rr6su"]
+[ext_resource type="Texture2D" uid="uid://0ug1x8kx2hl1" path="res://graphics/toast/toast_5.png" id="6_y3yjm"]
+[ext_resource type="Texture2D" uid="uid://ouiegabqu15d" path="res://graphics/toast/toast_6.png" id="7_4gjj0"]
+[ext_resource type="Texture2D" uid="uid://bvc8tkcot6lv5" path="res://graphics/toast/toast_7.png" id="8_l1i6t"]
+[ext_resource type="Texture2D" uid="uid://bdubs025ght0y" path="res://graphics/toast/toast_8.png" id="9_ryo4e"]
+[ext_resource type="Texture2D" uid="uid://bb6lyaivcone3" path="res://graphics/toast/toast_9.png" id="10_2yo4d"]
+[ext_resource type="Texture2D" uid="uid://eq618u1w4atw" path="res://graphics/toast/toast_10.png" id="11_ppjh7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rchu1"]
-radius = 0.03503583
+radius = 0.20633435
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rchu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hem5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nyn3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vgbvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rr6su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y3yjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4gjj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l1i6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ryo4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2yo4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ppjh7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="Bread" type="Area3D" unique_id=1840801122]
 collision_layer = 4
@@ -12,9 +59,15 @@ collision_mask = 9
 script = ExtResource("1_svkq2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=104190044]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_rchu1")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1097135109]
-texture = ExtResource("2_16yqp")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=228205219]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.9764706)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_rchu1")
+autoplay = "default"
+frame_progress = 0.63319856
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

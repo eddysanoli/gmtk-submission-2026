@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d0fyx3qej33c" path="res://scenes/enviorment/room.tscn" id="1_beodt"]
 [ext_resource type="PackedScene" uid="uid://kcqd6ds2ndca" path="res://scenes/characters/player.tscn" id="2_03idf"]
 [ext_resource type="PackedScene" uid="uid://c6gfg2ooue5n4" path="res://scenes/characters/enemy.tscn" id="3_xm532"]
+[ext_resource type="PackedScene" uid="uid://cvop2cpsrlmvq" path="res://scenes/enviorment/front_door.tscn" id="4_qylph"]
 
 [node name="Stage" type="Node3D" unique_id=1925008938]
 
@@ -56,3 +57,6 @@ transform = Transform3D(-0.9986007, 0, 0.052883413, 0, 1, 0, -0.052883413, 0, -0
 
 [node name="Enemy15" parent="." unique_id=625248363 instance=ExtResource("3_xm532")]
 transform = Transform3D(-0.9986007, 0, 0.052883413, 0, 1, 0, -0.052883413, 0, -0.9986007, 6.286871, 0.050001144, -10.969149)
+
+[node name="FrontDoor" parent="." unique_id=1168775571 instance=ExtResource("4_qylph")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.104669, 0.13197374, 14.712476)

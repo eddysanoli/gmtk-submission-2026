@@ -38,7 +38,6 @@
 [ext_resource type="PackedScene" uid="uid://bbshog4432xcy" path="res://assets/furniture/chairRounded.fbx" id="22_6j88r"]
 [ext_resource type="PackedScene" uid="uid://bri8fwyxy3ji5" path="res://assets/furniture/kitchenSink.fbx" id="23_tj7v7"]
 [ext_resource type="PackedScene" uid="uid://caxdcmf4kfvte" path="res://assets/furniture/pottedPlant.fbx" id="24_ovgd5"]
-[ext_resource type="PackedScene" uid="uid://b0ddwgc10hv5k" path="res://assets/furniture/doorwayFront.fbx" id="26_3msjg"]
 [ext_resource type="PackedScene" uid="uid://cj3n1pt66h6b2" path="res://assets/furniture/radio.fbx" id="27_tj7v7"]
 [ext_resource type="PackedScene" uid="uid://rgt5m038h28h" path="res://assets/furniture/trashcan.fbx" id="29_fg5ro"]
 [ext_resource type="PackedScene" uid="uid://dabg6jo2icxfa" path="res://assets/furniture/bookcaseOpenLow.fbx" id="31_vro2f"]
@@ -143,8 +142,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.9646308, 0.40574586)
-shader_parameter/cirrus_position2 = Vector2(0.9646308, 0.40574586)
+shader_parameter/cirrus_position1 = Vector2(0.8614654, 0.02255828)
+shader_parameter/cirrus_position2 = Vector2(0.8614654, 0.02255828)
 shader_parameter/cirrus_texture = ExtResource("2_sxl7y")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -154,7 +153,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(940.6138, 32.05256)
+shader_parameter/cumulus_position = Vector2(4.3071556, 0.112792745)
 shader_parameter/cumulus_texture = ExtResource("3_kfike")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -339,7 +338,7 @@ metadata/_custom_type_script = "uid://deo0gxkmk2ahd"
 [node name="SunLight" type="DirectionalLight3D" parent="Sky3D" unique_id=988001680]
 transform = Transform3D(0.9985913, 0.04123192, -0.03339601, 0, 0.62940073, 0.7770809, 0.05306001, -0.7759862, 0.6285141, -0.03339601, 0.7770809, 0.6285141)
 layers = 3
-light_energy = 0.15
+light_energy = 0.215
 shadow_enabled = true
 
 [node name="MoonLight" type="DirectionalLight3D" parent="Sky3D" unique_id=506447787]
@@ -482,9 +481,6 @@ transform = Transform3D(-2.346166e-08, 0, 0.3, 0, 0.3, 0, -0.5367402, 0, -1.3113
 
 [node name="kitchenFridge3" parent="Furniture" unique_id=1876071597 instance=ExtResource("20_dy6so")]
 transform = Transform3D(-2.346166e-08, 0, 0.3, 0, 0.3, 0, -0.5367402, 0, -1.3113417e-08, 0.71419334, 0.049999237, -36.411095)
-
-[node name="doorwayFront" parent="Furniture" unique_id=1038243646 instance=ExtResource("26_3msjg")]
-transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 15.220806, 0.049999237, 0.45619845)
 
 [node name="kitchenBarEnd" parent="Furniture" unique_id=1529499890 instance=ExtResource("2_mnumo")]
 transform = Transform3D(6.3637398e-09, 0, -0.48507378, 0, 0.3, 0, 0.5336523, 0, 5.784447e-09, 3.6373491, 0.049999237, 9.104011)
