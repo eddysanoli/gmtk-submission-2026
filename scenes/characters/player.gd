@@ -25,6 +25,7 @@ func _ready():
 	animated_sprite_2d.play("start")
 	Engine.time_scale = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	BkMusic.dead_music = true
 	
 	
 func _input(event):
