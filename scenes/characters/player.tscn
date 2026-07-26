@@ -337,6 +337,10 @@ one_shot = true
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
 
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=631700603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -2)
+
 [connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/QuitGame" to="." method="_on_quit_game_button_up"]
