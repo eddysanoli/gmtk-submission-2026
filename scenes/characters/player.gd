@@ -10,6 +10,8 @@ extends CharacterBody3D
 @onready var interaction_raycast: RayCast3D = $RayCast3D
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D2
 @onready var timer_clock: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D3
+@onready var countdown: Label = $CanvasLayer/GunBase/Label
+@onready var countdown_timer: Timer = $countdown_timer
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
@@ -20,6 +22,8 @@ var charge_tier = 0
 var charge_timeout = false
 var can_shoot = false
 var dead = false
+
+var counting = 10
 
 var interaction_is_reset : bool = true
 
@@ -59,12 +63,15 @@ func _process(_delta):
 			interaction_is_reset = true
 	if !charging and Engine.time_scale != 0 and can_shoot:
 		charging = true
+		counting = 10
 		charge_timer.start()
+		countdown_timer.start()
 		start_timer.start()
 		timer_clock.show()
 		timer_clock.play("default")
 		charge_start_time = Time.get_ticks_msec()
 	if charging == true:
+		countdown_timer.start()
 		if Input.is_action_just_pressed("shoot") or charge_timeout == true:
 			charging = false
 			can_shoot = false
@@ -170,4 +177,9 @@ func _on_quit_game_button_up() -> void:
 	$Click.play()
 	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
 	
+	
+func _on_countdown_timer_timeout() -> void:
+	counting -= 1
+	print("counting")
+	countdown.text = str(counting)
 	

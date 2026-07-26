@@ -274,6 +274,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rchu1"]
+font_size = 100
+
 [node name="Player" type="CharacterBody3D" unique_id=2038812497 groups=["Player"]]
 collision_layer = 2
 collision_mask = 9
@@ -322,6 +325,15 @@ animation = &"idle"
 position = Vector2(457, -55)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_0sr3o")
+
+[node name="Label" type="Label" parent="CanvasLayer/GunBase" unique_id=961165146]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -124.0
+offset_right = 374.0
+offset_bottom = 13.0
+text = "10"
+label_settings = SubResource("LabelSettings_rchu1")
 
 [node name="Interact" type="Control" parent="CanvasLayer" unique_id=1488856212]
 visible = false
@@ -513,6 +525,10 @@ volume_db = -10.0
 stream = ExtResource("51_lnpl6")
 volume_db = 10.0
 
+[node name="countdown_timer" type="Timer" parent="." unique_id=507803961]
+one_shot = true
+ignore_time_scale = true
+
 [connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/QuitGame" to="." method="_on_quit_game_button_up"]
@@ -521,3 +537,4 @@ volume_db = 10.0
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="Charge" to="." method="_on_charge_timeout"]
 [connection signal="timeout" from="Start" to="." method="_on_start_timeout"]
+[connection signal="timeout" from="countdown_timer" to="." method="_on_countdown_timeout"]
