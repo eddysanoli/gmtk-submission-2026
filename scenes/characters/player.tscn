@@ -48,7 +48,7 @@ animations = [{
 "texture": ExtResource("11_kmyvj")
 }],
 "loop": 0,
-"name": &"idle",
+"name": &"start",
 "speed": 5.0
 }]
 
@@ -83,9 +83,7 @@ grow_vertical = 0
 position = Vector2(-247.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
-animation = &"idle"
-frame = 9
-frame_progress = 1.0
+animation = &"start"
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1755915098]
 visible = false
@@ -232,6 +230,7 @@ one_shot = true
 [node name="Charge" type="Timer" parent="." unique_id=709035471]
 wait_time = 10.0
 
+[connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/QuitGame" to="." method="_on_quit_game_button_up"]
 [connection signal="button_up" from="CanvasLayer/PauseScreen/Panel/Return" to="." method="_on_return_button_up"]

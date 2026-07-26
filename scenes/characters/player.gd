@@ -14,12 +14,12 @@ var charging = false
 var charge_start_time : float
 var charge_tier = 0
 var charge_timeout = false
-var can_shoot = true
+var can_shoot = false
 var dead = false
 
 # ─────────────────────────────────────────────
 func _ready():
-	animated_sprite_2d.play("idle")
+	animated_sprite_2d.play("start")
 	Engine.time_scale = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -83,6 +83,10 @@ func calculate_power(charging_time):
 
 func _on_cooldown_timeout():
 	can_shoot = true
+	
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == "start":
+		can_shoot = true
 
 # ────────────────────PAUSE─────────────────────────
 func pause():

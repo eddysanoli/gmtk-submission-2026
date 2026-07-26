@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 @export var move_speed = 1.8
 @export var attack_range = 1.3
-@export var health = 30.0
+@export var health = 50.0
 @export var memory_time = 5.0
 
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("Player")
