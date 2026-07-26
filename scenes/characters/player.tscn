@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://c4hujcpbbtl2b" path="res://graphics/hands/shoot/shoot_14.png" id="21_lvr6b"]
 [ext_resource type="Texture2D" uid="uid://ckesdwpkvpgf4" path="res://graphics/hands/shoot/shoot_15.png" id="22_nktl3"]
 [ext_resource type="Texture2D" uid="uid://bv1n5bh4vrwxh" path="res://graphics/hands/shoot/shoot_16.png" id="23_yyjep"]
+[ext_resource type="Texture2D" uid="uid://xml5f0qnrbxy" path="res://graphics/toast/burn/burn_1.png" id="34_7xgtv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -159,6 +160,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rchu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_7xgtv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody3D" unique_id=2038812497 groups=["Player"]]
 collision_layer = 2
 collision_mask = 9
@@ -194,7 +206,11 @@ grow_vertical = 0
 position = Vector2(-204.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
-animation = &"start"
+animation = &"idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=552280806]
+position = Vector2(-221, -371)
+sprite_frames = SubResource("SpriteFrames_rchu1")
 
 [node name="Interact" type="Control" parent="CanvasLayer" unique_id=1488856212]
 visible = false
