@@ -23,6 +23,7 @@ func _ready():
 	Engine.time_scale = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	
 func _input(event):
 	if dead:
 		return
@@ -103,7 +104,9 @@ func _on_return_button_up():
 	Engine.time_scale = 1
 	
 func _on_quit_button_up():
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	Engine.time_scale = 1
+	$CanvasLayer/PauseScreen.hide()
+	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
 
 # ────────────────────DEATH─────────────────────────
 func kill():
@@ -113,7 +116,14 @@ func kill():
 	$CanvasLayer/DeathScreen.show()
 
 func _on_restart_button_up():
-	get_tree().change_scene_to_file("res://scenes/enviorment/stage.tscn")
+	#get_tree().change_scene_to_file("res://scenes/enviorment/stage.tscn")
+	$CanvasLayer.hide()
+	#Engine.time_scale = 1
+	game_manager.load_scene_with_loading_screen("res://scenes/enviorment/stage.tscn")
 
 func _on_quit_game_button_up() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	#get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	$CanvasLayer.hide()
+	#Engine.time_scale = 1
+	game_manager.load_scene_with_loading_screen("res://scenes/menu.tscn")
+	
