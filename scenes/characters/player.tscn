@@ -278,6 +278,9 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_rchu1"]
 font_size = 100
 
+[sub_resource type="LabelSettings" id="LabelSettings_dmgind"]
+font_size = 32
+
 [node name="Player" type="CharacterBody3D" unique_id=2038812497 groups=["Player"]]
 collision_layer = 2
 collision_mask = 9
@@ -337,6 +340,39 @@ offset_right = 374.0
 offset_bottom = 13.0
 text = "8"
 label_settings = SubResource("LabelSettings_rchu1")
+
+[node name="DamageIndicator" type="Control" parent="CanvasLayer" unique_id=700000001]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 40.0
+offset_right = 260.0
+offset_bottom = 110.0
+grow_horizontal = 2
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/DamageIndicator" unique_id=700000002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Label" type="Label" parent="CanvasLayer/DamageIndicator" unique_id=700000003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No damage"
+label_settings = SubResource("LabelSettings_dmgind")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Interact" type="Control" parent="CanvasLayer" unique_id=1488856212]
 visible = false

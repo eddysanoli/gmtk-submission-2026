@@ -11,11 +11,18 @@ extends CharacterBody3D
 @onready var timer_clock: AnimatedSprite2D = $CanvasLayer/GunBase/AnimatedSprite2D3
 @onready var countdown: Label = $CanvasLayer/GunBase/Label
 @onready var countdown_timer: Timer = $countdown_timer
+@onready var damage_indicator: Control = $CanvasLayer/DamageIndicator
+@onready var damage_indicator_label: Label = $CanvasLayer/DamageIndicator/Label
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
 const FADE_AT_COUNT = 5
 const START_COUNT = 8
+
+const DEFAULT_DAMAGE_TEXT = "Burnt toast! No damage"
+const LOW_DAMAGE_TEXT = "White bread, low damage"
+const MID_DAMAGE_TEXT = "Well done, medium damage"
+const HIGH_DAMAGE_TEXT = "Perfect toast, high damage!"
 
 var charging = false
 var charge_start_time: float
@@ -26,6 +33,7 @@ var dead = false
 
 var counting = START_COUNT
 var fade_tween: Tween
+var damage_fade_tween: Tween
 
 var interaction_is_reset: bool = true
 
@@ -109,6 +117,7 @@ func show_countdown():
 
 func shoot(charge_start: float, charge_end: float):
 	calculate_power(charge_end - charge_start)
+	show_damage_indicator(charge_end - charge_start)
 	if charge_tier != 0:
 		animated_sprite_2d.play("shoot")
 		await get_tree().create_timer(0.4).timeout
@@ -124,6 +133,24 @@ func shoot(charge_start: float, charge_end: float):
 		animated_sprite_2d_2.play("default")
 		cooldown_timer.start()
 	
+func show_damage_indicator(charging_time: float):
+	if charging_time < 3000:
+		damage_indicator_label.text = LOW_DAMAGE_TEXT
+	elif charging_time < 6000:
+		damage_indicator_label.text = MID_DAMAGE_TEXT
+	elif charging_time < 9000:
+		damage_indicator_label.text = HIGH_DAMAGE_TEXT
+	else:
+		damage_indicator_label.text = DEFAULT_DAMAGE_TEXT
+	if damage_fade_tween:
+		damage_fade_tween.kill()
+	damage_indicator.modulate.a = 1.0
+	damage_indicator.show()
+	damage_fade_tween = create_tween()
+	damage_fade_tween.tween_interval(3.0)
+	damage_fade_tween.tween_property(damage_indicator, "modulate:a", 0.0, 0.5)
+	damage_fade_tween.tween_callback(damage_indicator.hide)
+
 func calculate_power(charging_time):
 	var charge = floor(charging_time / 1000)
 	print(charge)
