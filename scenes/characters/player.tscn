@@ -60,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://c6k5sef7qm70a" path="res://graphics/clock/clock_6.png" id="53_dvq58"]
 [ext_resource type="Texture2D" uid="uid://8d5ajn2hfqo2" path="res://graphics/clock/clock_7.png" id="54_qgqs5"]
 [ext_resource type="Texture2D" uid="uid://cvqvslamsxbpt" path="res://graphics/clock/clock_8.png" id="55_e1rhj"]
+[ext_resource type="AudioStream" uid="uid://cmdsmk07nab3j" path="res://audio/vfx/Tostador explosión.wav" id="61_7k8pb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rchu1"]
 
@@ -154,52 +155,52 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("8_dg40j")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("9_7xgtv")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("10_6rclf")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("11_s0anf")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("12_s1x7u")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("13_c3kfx")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("14_hdner")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("15_m38kj")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("16_v1y1o")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("17_hnvwh")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("18_rfou0")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("19_vkt2s")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("20_6ux5t")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("21_lvr6b")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("22_nktl3")
 }, {
-"duration": 0.5,
+"duration": 0.35,
 "texture": ExtResource("23_yyjep")
 }],
 "loop": 0,
@@ -319,7 +320,9 @@ frame_progress = 1.0
 position = Vector2(-204.00002, -234)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_34fwg")
-animation = &"idle"
+animation = &"shoot"
+frame = 15
+frame_progress = 1.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/GunBase" unique_id=953313938]
 position = Vector2(457, -55)
@@ -332,7 +335,7 @@ offset_left = 260.0
 offset_top = -124.0
 offset_right = 374.0
 offset_bottom = 13.0
-text = "10"
+text = "8"
 label_settings = SubResource("LabelSettings_rchu1")
 
 [node name="Interact" type="Control" parent="CanvasLayer" unique_id=1488856212]
@@ -523,9 +526,14 @@ stream = ExtResource("51_lnpl6")
 volume_db = 10.0
 
 [node name="countdown_timer" type="Timer" parent="." unique_id=507803961]
-wait_time = 1.0
 one_shot = true
 ignore_time_scale = true
+
+[node name="Explosion" type="AudioStreamPlayer3D" parent="." unique_id=2130289502]
+stream = ExtResource("61_7k8pb")
+volume_db = -15.0
+max_db = 2.0
+pitch_scale = 1.65
 
 [connection signal="animation_finished" from="CanvasLayer/GunBase/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Restart" to="." method="_on_restart_button_up"]

@@ -14,7 +14,8 @@ extends CharacterBody3D
 
 # ─────────────────────────────────────────────
 const SPEED = 5.0
-const FADE_AT_COUNT = 6
+const FADE_AT_COUNT = 5
+const START_COUNT = 8
 
 var charging = false
 var charge_start_time: float
@@ -23,7 +24,7 @@ var charge_timeout = false
 var can_shoot = false
 var dead = false
 
-var counting = 10
+var counting = START_COUNT
 var fade_tween: Tween
 
 var interaction_is_reset: bool = true
@@ -97,7 +98,7 @@ func show_countdown():
 	if fade_tween:
 		fade_tween.kill()
 	countdown_timer.stop()
-	counting = 10
+	counting = START_COUNT
 	countdown_timer.start()
 	timer_clock.modulate.a = 1.0
 	timer_clock.show()
@@ -112,13 +113,14 @@ func shoot(charge_start: float, charge_end: float):
 		animated_sprite_2d.play("shoot")
 		await get_tree().create_timer(0.4).timeout
 		$Recharge.play()
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.5).timeout
 		var new_bread = bread.instantiate()
 		new_bread.charge_power = charge_tier
 		get_node("../Objects").add_child(new_bread)
 		new_bread.global_transform = spawn_location.global_transform
 		cooldown_timer.start()
 	if charge_tier == 0:
+		$Explosion.play()
 		animated_sprite_2d_2.play("default")
 		cooldown_timer.start()
 	

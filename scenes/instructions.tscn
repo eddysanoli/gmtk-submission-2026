@@ -31,7 +31,7 @@ offset_bottom = 292.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "The evil bakery across the street has taken the secret recipe to your bakery's success: The Carb-ine 3000. Infiltrate among the french chefs found within the enemy lines and get out with the power of toast and friendship."
+text = "The evil bakers across the street have kidnapped the secret to your bakery's success: The Carb-ine 3000 (aka Toasty). You have infiltrated the enemy lines and now need to get out!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -46,8 +46,7 @@ offset_bottom = 494.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Shoot the evil chefs with Toasty, your best friend. Get the perfect toast to deal the maximum damage. Do not burn the bread! 
-Click to shoot & wasd to move"
+text = "Toasty will toast the bread until it explodes into a burnt mess. Click to force him to shoot a toast before that happens. The closer you are to the countdown's end, the higher the damage each slice will do!"
 horizontal_alignment = 1
 autowrap_mode = 2
 

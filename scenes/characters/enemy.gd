@@ -4,10 +4,10 @@ extends CharacterBody3D
 
 @export var move_speed = 1.8
 @export var attack_range = 1.3
-@export var health = 35.0
+@export var health = 20.0
 @export var memory_time = 5.0
 
-@onready var player : CharacterBody3D = get_tree().get_first_node_in_group("Player")
+@onready var player: CharacterBody3D = get_tree().get_first_node_in_group("Player")
 var dead = false
 
 # ───────────────────Behaviour Variables──────────────────────────
@@ -82,7 +82,7 @@ func attempt_to_kill_player():
 	
 	
 	var eye_line = Vector3.UP * 1.5
-	var query = PhysicsRayQueryParameters3D.create(global_position+eye_line, player.global_position+eye_line, 1)
+	var query = PhysicsRayQueryParameters3D.create(global_position + eye_line, player.global_position + eye_line, 1)
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
 	if result.is_empty():
 		player.kill()
